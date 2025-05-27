@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c5c4bc873ad4ebab7b1518a20dff5ab, type: 3}
+  m_Name: Peggle Manager
+  m_EditorClassIdentifier: 
+  _settings:
+    ballPrefab: {fileID: 3824727524208583939, guid: 2437f43a555a8e844b381b7806d0d4e9, type: 3}
+    ballTrail: 1
+    ballTrailLength: 0.62
+    launcherRotationSpeed: 50
+    launchSpeed: 6.03
+    limitLauncherAngle: 1
+    degreesAwayFromUpToPrevent: 110
+    PegPrefab: {fileID: 3334641741667097732, guid: 2ce3653d1b5731741af1bb0289bf24c9, type: 3}
+    delayBetweenPegClears: 0.05
+    timeOfContinuousContactBeforeRemovingPeg: 0
+    shapeRotationSpeed: 3
+    basicPegColor: {r: 0.5707547, g: 0.8332159, b: 1, a: 1}
+    requiredPegColor: {r: 1, g: 0.6465747, b: 0.1273585, a: 1}
+    specialPegColor: {r: 1, g: 0.4575472, b: 0.99649024, a: 1}
+    randomizeBucketStartPosition: 1
+    bucketMoveSpeed: 4
+    BallsPerGame: 3
+    RequiredPegCount: 10

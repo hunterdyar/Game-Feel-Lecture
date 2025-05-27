@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 69ac7cf89f1c4e4091a89c16f0d5de66
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - peggleManager: {fileID: 11400000, guid: ee80a6bded253b94d94bd4b75467dcd6, type: 2}
+  - Rotate: {instanceID: 0}
+  - Launch: {instanceID: 0}
+  - _launchPoint: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

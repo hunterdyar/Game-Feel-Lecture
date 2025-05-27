@@ -1,0 +1,5 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="HeaderBar" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0.57); background-size: 100% 50px; height: 50px; position: absolute; right: 0; left: 0; top: 0;">
+        <ui:Label text="Label" parse-escape-sequences="true" binding-path="Header" name="Header" style="position: absolute; top: auto; bottom: auto; right: auto; left: auto; width: 100%; height: 100%; -unity-text-align: middle-center; font-size: 24px; -unity-font-style: bold; color: rgb(238, 238, 238); -unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&amp;guid=d214e8b59a071ff46ad5654b96317e0a&amp;type=3#NotInter-Regular&quot;); background-color: rgba(0, 0, 0, 0.55);" />
+    </ui:VisualElement>
+</ui:UXML>
