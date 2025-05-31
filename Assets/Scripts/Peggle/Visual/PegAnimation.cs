@@ -62,13 +62,13 @@ namespace Peggle
 			switch (pegType)
 			{
 				case PegType.Basic:
-					_pegRenderer.color = _peg.Manager.Settings.basicPegColor;
+					_pegRenderer.color = PeggleManager.Settings.basicPegColor;
 					break;
 				case PegType.Required:
-					_pegRenderer.color = _peg.Manager.Settings.requiredPegColor;
+					_pegRenderer.color = PeggleManager.Settings.requiredPegColor;
 					break;
 				case PegType.SuperDuper:
-					_pegRenderer.color = _peg.Manager.Settings.specialPegColor;
+					_pegRenderer.color = PeggleManager.Settings.specialPegColor;
 					break;
 			}
 		}

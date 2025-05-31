@@ -77,7 +77,7 @@ public class Peg : MonoBehaviour, IBallHit
     private void OnCollisionStay2D(Collision2D other)
     {
         ballStuckTime += Time.deltaTime;
-        if (ballStuckTime >= Manager.Settings.timeOfContinuousContactBeforeRemovingPeg)
+        if (ballStuckTime >= PeggleManager.Settings.timeOfContinuousContactBeforeRemovingPeg)
         {
             //todo: Check if ball is moving not-that-slowly
             _pegState = PegState.ClearedByStuck;
