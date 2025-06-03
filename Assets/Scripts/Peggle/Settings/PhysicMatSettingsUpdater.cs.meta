@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 0fa019c5866944e696737cb9d9c84143
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _manager: {fileID: 11400000, guid: ee80a6bded253b94d94bd4b75467dcd6, type: 2}
+  - BallPhysMat: {fileID: 6200000, guid: 63a0b271fb7747948a3188c30ba95e1c, type: 2}
+  - PegPhysMat: {fileID: 6200000, guid: 191649661bcde89498764a8de043e3fa, type: 2}
+  - WallPhysMat: {fileID: 6200000, guid: 191649661bcde89498764a8de043e3fa, type: 2}
+  - BucketPhysMat: {fileID: 6200000, guid: f1587c2bdfabc6f439cd19b533643ae3, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

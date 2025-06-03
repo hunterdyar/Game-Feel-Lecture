@@ -14,7 +14,7 @@ public class Bucket : MonoBehaviour
 
 	void Start()
 	{
-		if (_manager.Settings.randomizeBucketStartPosition)
+		if (PeggleManager.Settings.randomizeBucketStartPosition)
 		{
 			float randPos = Random.Range(LeftEdge, RightEdge);
 			transform.position = new Vector3(randPos, transform.position.y, transform.position.z);
@@ -31,6 +31,6 @@ public class Bucket : MonoBehaviour
 			moveDir = -1;
 		}
 		
-		transform.Translate(Vector3.right * (moveDir * _manager.Settings.bucketMoveSpeed * Time.deltaTime), Space.World);
+		transform.Translate(Vector3.right * (moveDir * PeggleManager.Settings.bucketMoveSpeed * Time.deltaTime), Space.World);
 	}
 }

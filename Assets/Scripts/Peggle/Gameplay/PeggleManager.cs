@@ -17,7 +17,7 @@ namespace Peggle
 		public static Action StartGame;
 		
 		[SerializeField] private PeggleSettings _settings;
-		public PeggleSettings Settings => _settings;
+		public static PeggleSettings Settings;
 		private PeggleGameState _state;
 		
 		public int RemainingBalls => _remainingBalls;
@@ -34,11 +34,19 @@ namespace Peggle
 		private void SetSettings(PeggleSettings newSettings)
 		{
 			_settings = newSettings;
+			Settings = _settings;
 			OnSettingsChanged?.Invoke(_settings);
 		}
 
-		public void StartNewGame(RoundManager roundManager) 
+		public void Init()
 		{
+			Settings = _settings;
+		}
+		public void StartNewGame(RoundManager roundManager)
+		{
+			//call again just to force update.
+			OnSettingsChanged?.Invoke(Settings);
+			//
 			_roundManager = roundManager;
 			_remainingBalls = _settings.BallsPerGame;
 			OnRemainingBallCountChanged?.Invoke(_remainingBalls);
@@ -136,5 +144,7 @@ namespace Peggle
 		{
 			_allPegs.Add(peg);
 		}
+
+
 	}
 }

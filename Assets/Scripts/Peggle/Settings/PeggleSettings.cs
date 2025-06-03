@@ -9,7 +9,13 @@ namespace Peggle
 		[Header("Ball Settings")]
 		public Ball ballPrefab;
 		public bool ballTrail;
-		public float ballTrailLength;
+		public float ballTrailTime;
+		
+		[Header("Bouncinness Settings")]
+		public float ballBounciness;
+		public float pegBounciness;
+		public float wallBounciness;
+		public float bucketBounciness;
 		
 		[Header("Launcher Settings")]
 		[Min(0)]

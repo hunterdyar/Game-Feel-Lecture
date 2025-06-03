@@ -15,7 +15,11 @@ MonoBehaviour:
   _settings:
     ballPrefab: {fileID: 3824727524208583939, guid: 2437f43a555a8e844b381b7806d0d4e9, type: 3}
     ballTrail: 1
-    ballTrailLength: 0.62
+    ballTrailTime: 0.4
+    ballBounciness: 0.75
+    pegBounciness: 0.6
+    wallBounciness: 0.6
+    bucketBounciness: 1
     launcherRotationSpeed: 50
     launchSpeed: 6.03
     limitLauncherAngle: 1

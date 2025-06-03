@@ -1,5 +1,6 @@
 using System;
 using Peggle;
+using Peggle.Peggle.Prediction;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -13,7 +14,7 @@ public class Peg : MonoBehaviour, IBallHit
     public Action<PegState> OnPegStateChanged;
     
     [FormerlySerializedAs("_manager")] public PeggleManager Manager;
-    private Collider2D _col;
+    private CircleCollider2D _col;
     private int _hitCount = 0;
     public PegType PegType => _pegType;
     private PegType _pegType;
@@ -24,15 +25,22 @@ public class Peg : MonoBehaviour, IBallHit
     private float ballStuckTime = 0;
     void Awake()
     {
-        _col = GetComponent<Collider2D>();
+        _col = GetComponent<CircleCollider2D>();
         _pegState = PegState.ActiveToBeHit;
         Manager.RegisterPeg(this);
+        BallPrediction.RegisterCircleColliderForPrediction(gameObject,_col);
     }
-    
+
+    private void OnDestroy()
+    {
+        BallPrediction.UnregisterColliderForPrediction(gameObject);
+    }
+
     private void OnEnable()
     {
         PeggleManager.OnRoundStart += OnRoundStart;
         PeggleManager.StartGame += StartGame;
+        BallPrediction.SetEnabled(gameObject,true);
     }
 
     private void StartGame()
@@ -54,6 +62,8 @@ public class Peg : MonoBehaviour, IBallHit
     {
         PeggleManager.OnRoundStart -= OnRoundStart;
         PeggleManager.StartGame -= StartGame;
+        BallPrediction.SetEnabled(gameObject, false);
+
     }
 
     private void OnRoundStart()
@@ -77,7 +87,7 @@ public class Peg : MonoBehaviour, IBallHit
     private void OnCollisionStay2D(Collision2D other)
     {
         ballStuckTime += Time.deltaTime;
-        if (ballStuckTime >= Manager.Settings.timeOfContinuousContactBeforeRemovingPeg)
+        if (ballStuckTime >= PeggleManager.Settings.timeOfContinuousContactBeforeRemovingPeg)
         {
             //todo: Check if ball is moving not-that-slowly
             _pegState = PegState.ClearedByStuck;

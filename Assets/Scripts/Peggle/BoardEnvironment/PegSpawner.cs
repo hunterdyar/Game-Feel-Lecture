@@ -7,7 +7,7 @@ namespace Peggle
 	public class PegSpawner : MonoBehaviour
 	{
 		[SerializeField] private PeggleManager _manager;
-		private Peg PegPrefab => _manager.Settings.PegPrefab;
+		private Peg PegPrefab => PeggleManager.Settings.PegPrefab;
 		private IShape _shape;
 
 		private List<Peg> _pegs = new List<Peg>();
