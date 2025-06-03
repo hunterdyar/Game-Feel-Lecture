@@ -15,6 +15,8 @@ namespace PresentationSystem
 
 		private SlideBase[] _slides;
 		private int startingSlide = 0;
+
+		public static Func<SlideChangeEvent, SlideChangeEvent> OnChangeSlide;
 		
 		private void Awake()
 		{
@@ -41,8 +43,18 @@ namespace PresentationSystem
 		[ContextMenu("Next Slide")]
 		public void NextSlide()
 		{
-			_currentSlide++;
 			
+			if (OnChangeSlide != null)
+			{
+				var changeEvent = new SlideChangeEvent(1, _slides[_currentSlide]);
+				changeEvent = OnChangeSlide(changeEvent);
+				if (changeEvent.Consumed)
+				{
+					return;
+				}
+			}
+			
+			_currentSlide++;
 			if (_currentSlide >= _slides.Length)
 			{
 				_currentSlide = 0;
