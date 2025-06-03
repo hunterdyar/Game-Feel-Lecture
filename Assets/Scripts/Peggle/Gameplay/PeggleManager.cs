@@ -146,5 +146,11 @@ namespace Peggle
 		}
 
 
+		public void BallEnteredBucket(Ball ball)
+		{
+			_remainingBalls++;
+			OnRemainingBallCountChanged?.Invoke(_remainingBalls);
+			BallLeftPlay(ball);
+		}
 	}
 }

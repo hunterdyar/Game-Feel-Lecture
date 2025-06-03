@@ -35,6 +35,13 @@ namespace Peggle
 			if (death != null)
 			{
 				death.ConsumeBall(this);
+				return;
+			}
+
+			var bucket = other.gameObject.GetComponent<Bucket>();
+			if (bucket != null)
+			{
+				bucket.ConsumeBall(this);
 			}
 		}
 	}

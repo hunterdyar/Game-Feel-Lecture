@@ -33,4 +33,11 @@ public class Bucket : MonoBehaviour
 		
 		transform.Translate(Vector3.right * (moveDir * PeggleManager.Settings.bucketMoveSpeed * Time.deltaTime), Space.World);
 	}
+
+	public void ConsumeBall(Ball ball)
+	{
+		_manager.BallEnteredBucket(ball);
+		ball.gameObject.SetActive(false);
+
+	}
 }
