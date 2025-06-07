@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using BTween;
 using UnityEngine;
 
 namespace Peggle
@@ -8,10 +10,26 @@ namespace Peggle
 	{
 		[SerializeField] private SpriteRenderer _pegRenderer;
 		[SerializeField] private SpriteRenderer _clearedOverlayRenderer;
+		[SerializeField] private SpriteRenderer _pegImpactOverlayRenderer;
+		
+		private Tween _impactTween;
+		
 		private Peg _peg;
 		void Awake()
 		{
 			_peg = GetComponent<Peg>();
+			
+			//configure tween.
+			_impactTween = _pegImpactOverlayRenderer.transform.BScaleFromTo(Vector3.one, Vector3.one * 2, 0.2f, Ease.EaseOutCirc, false)
+				.Add(new FloatTween((c)=>
+					{
+						_pegImpactOverlayRenderer.color = new Color(_pegImpactOverlayRenderer.color.r,
+							_pegImpactOverlayRenderer.color.g, _pegImpactOverlayRenderer.color.b, c);
+						return c;
+					},
+					1,0,Ease.EaseOutCirc));
+			_impactTween.OnStart(()=> _pegImpactOverlayRenderer.enabled = true);
+			_impactTween.OnComplete(() => _pegImpactOverlayRenderer.enabled = false);
 		}
 
 		private void OnEnable()
@@ -30,14 +48,13 @@ namespace Peggle
 		
 		private void OnThisPegHit(int arg1, Collision2D arg2)
 		{
-			
+			_impactTween.Start();
 		}
 
 		private void OnPegStateChanged(PegState state)
 		{
 			switch (state)
 			{
-				
 				case PegState.ActiveToBeHit:
 					_pegRenderer.enabled = true;
 					_clearedOverlayRenderer.enabled = false;
@@ -63,12 +80,16 @@ namespace Peggle
 			{
 				case PegType.Basic:
 					_pegRenderer.color = PeggleManager.Settings.basicPegColor;
+					_pegImpactOverlayRenderer.color = PeggleManager.Settings.basicPegColor;
 					break;
 				case PegType.Required:
 					_pegRenderer.color = PeggleManager.Settings.requiredPegColor;
+					_pegImpactOverlayRenderer.color = PeggleManager.Settings.requiredPegColor;
+
 					break;
 				case PegType.SuperDuper:
 					_pegRenderer.color = PeggleManager.Settings.specialPegColor;
+					_pegImpactOverlayRenderer.color = PeggleManager.Settings.specialPegColor;
 					break;
 			}
 		}

@@ -26,7 +26,7 @@ MonoBehaviour:
     degreesAwayFromUpToPrevent: 110
     PegPrefab: {fileID: 3334641741667097732, guid: 2ce3653d1b5731741af1bb0289bf24c9, type: 3}
     delayBetweenPegClears: 0.05
-    timeOfContinuousContactBeforeRemovingPeg: 0
+    timeOfContinuousContactBeforeRemovingPeg: 2
     shapeRotationSpeed: 3
     basicPegColor: {r: 0.5707547, g: 0.8332159, b: 1, a: 1}
     requiredPegColor: {r: 1, g: 0.6465747, b: 0.1273585, a: 1}

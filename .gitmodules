@@ -1,0 +1,3 @@
+[submodule "Packages/BTween"]
+	path = Packages/BTween
+	url = https://github.com/hunterdyar/BTween
