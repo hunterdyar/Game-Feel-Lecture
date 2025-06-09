@@ -16,6 +16,12 @@ namespace Peggle
 		public static Action PrepareGame;
 		public static Action StartGame;
 		
+		public static Action<Vector3, int> OnScoreEarned;
+		public static Action<int> OnShotScoreChanged;
+		public static Action<int> OnTotalScoreChanged;
+		public int CurrentShotScore = 0;
+		public int CurrentTotalScore = 0;
+		
 		[SerializeField] private PeggleSettings _settings;
 		public static PeggleSettings Settings;
 		private PeggleGameState _state;
@@ -28,9 +34,10 @@ namespace Peggle
 
 		private List<Ball> ActiveBalls = new List<Ball>();
 		private List<Peg> _hitPegs = new List<Peg>();
+		public int HitPegs => _hitPegs.Count;
 		private List<Peg> _allPegs = new List<Peg>();
 		private List<Peg> _requiredPegs => _allPegs.Where(x => x.PegType == PegType.Required).ToList();
-		
+		private int _remainingRequiredPegCount;
 		private void SetSettings(PeggleSettings newSettings)
 		{
 			_settings = newSettings;
@@ -53,7 +60,6 @@ namespace Peggle
 			ActiveBalls.Clear();
 			_hitPegs.Clear();
 			_allPegs.Clear();
-			ChangeState(PeggleGameState.PlayerCanShoot);
 			PrepareGame?.Invoke();
 			_allPegs.Shuffle();
 			for (int i = 0; i < _allPegs.Count; i++)
@@ -67,7 +73,14 @@ namespace Peggle
 					_allPegs[i].SetPegType(PegType.Basic);
 				}
 			}
+			_remainingRequiredPegCount = _settings.RequiredPegCount;
+			CurrentTotalScore = 0;
+			OnTotalScoreChanged?.Invoke(CurrentTotalScore);
+			CurrentShotScore = 0;
+			OnShotScoreChanged?.Invoke(CurrentShotScore);
+			
 			StartGame?.Invoke();
+			ChangeState(PeggleGameState.PlayerCanShoot);
 		}
 
 		public void BallLaunched(Ball ball)
@@ -88,21 +101,28 @@ namespace Peggle
 			{
 				Debug.LogError("Ball doesn't exist in list.", ball);
 			}
-
+			//end the shot
+			
+			
+			//end the round
 			if (ActiveBalls.Count == 0)
 			{
 				if (_remainingBalls > 0)
 				{
+					GetTotalScoreFromShot();
 					ChangeState(PeggleGameState.PlayerCanShoot);
 				}
 				else
 				{
+					GetTotalScoreFromShot();
 					ChangeState(PeggleGameState.OutOfBallsFailure);
 				}
 
 				RoundEndedClearPegs();
 			}
 		}
+
+	
 
 		private void ChangeState(PeggleGameState state)
 		{
@@ -138,13 +158,35 @@ namespace Peggle
 			{
 				_hitPegs.Add(peg);
 			}
+			_remainingRequiredPegCount = _settings.RequiredPegCount - _hitPegs.Count(x=>x.PegType == PegType.Required);
+			var multi = _settings.GetScoreMultiplier(_remainingRequiredPegCount);
+			var baseScore = _settings.GetBaseScore(peg.PegType);
+			int points = multi * baseScore;
+			GetScore(peg, points);
+		}
+
+		private void GetScore(Peg peg, int points)
+		{
+			CurrentShotScore += points;
+			OnScoreEarned?.Invoke(peg.transform.position,points);
+			OnShotScoreChanged?.Invoke(CurrentShotScore);
+		}
+
+		/// <summary>
+		/// Move points from the shot to the total.
+		/// </summary>
+		private void GetTotalScoreFromShot()
+		{
+			CurrentTotalScore += CurrentShotScore;
+			OnTotalScoreChanged?.Invoke(CurrentTotalScore);
+			CurrentShotScore = 0;
+			OnShotScoreChanged?.Invoke(CurrentShotScore);
 		}
 
 		public void RegisterPeg(Peg peg)
 		{
 			_allPegs.Add(peg);
 		}
-
 
 		public void BallEnteredBucket(Ball ball)
 		{

@@ -46,5 +46,55 @@ namespace Peggle
 		public int BallsPerGame;
 		[Tooltip("Required == Orange")]
 		public int RequiredPegCount;
+
+		[Header("Score Settings")] public int BaseScoreNormalPeg;
+		public int BaseScoreRequiredPeg;
+		public int BaseScoreSpecialPeg;
+
+		public int GetScoreMultiplier(int remainingRequiredPegs)
+		{
+			//https://peggle.fandom.com/wiki/Scoring_System
+			//I'll need to modify these for the smaller peg counts.
+			if (remainingRequiredPegs == 0)
+			{
+				//FEVER
+				return 100;
+			}
+			if (remainingRequiredPegs <= 3)
+			{
+				return 10;
+			}
+
+			if (remainingRequiredPegs <= 6)
+			{
+				return 5;
+			}
+			if(remainingRequiredPegs <= 10)
+			{
+				return 3;
+			}
+
+			if (remainingRequiredPegs <= 15)
+			{
+				return 2;
+			}
+
+			return 1;
+		}
+
+		public int GetBaseScore(PegType pegType)
+		{
+			switch (pegType)
+			{
+				case PegType.Basic:
+					return BaseScoreNormalPeg;
+				case PegType.Required:
+					return BaseScoreRequiredPeg;
+				case PegType.SuperDuper:
+					return BaseScoreSpecialPeg;
+			}
+
+			return 0;
+		}
 	}
 }

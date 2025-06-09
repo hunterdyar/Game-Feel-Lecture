@@ -1,0 +1,8 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1;">
+        <ui:Label text="Score:" style="color: rgb(243, 243, 243);" />
+        <ui:Label text="12345" name="ShotScore" style="color: rgb(243, 243, 243);" />
+        <ui:Label text="Total Score:" style="color: rgb(243, 243, 243);" />
+        <ui:Label text="12345" name="TotalScore" style="color: rgb(243, 243, 243);" />
+    </ui:VisualElement>
+</ui:UXML>

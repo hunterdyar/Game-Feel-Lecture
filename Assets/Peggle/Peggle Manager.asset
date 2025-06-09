@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c5c4bc873ad4ebab7b1518a20dff5ab, type: 3}
   m_Name: Peggle Manager
   m_EditorClassIdentifier: 
+  CurrentShotScore: 0
+  CurrentTotalScore: 0
   _settings:
     ballPrefab: {fileID: 3824727524208583939, guid: 2437f43a555a8e844b381b7806d0d4e9, type: 3}
     ballTrail: 1
@@ -38,3 +40,6 @@ MonoBehaviour:
     bucketMoveSpeed: 4
     BallsPerGame: 3
     RequiredPegCount: 10
+    BaseScoreNormalPeg: 10
+    BaseScoreRequiredPeg: 100
+    BaseScoreSpecialPeg: 500
