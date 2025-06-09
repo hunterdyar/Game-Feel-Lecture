@@ -939,7 +939,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 2.5
   pegCount: 12
-  circlePercent: 0.517
+  circlePercent: 0
 --- !u!1 &1433146781
 GameObject:
   m_ObjectHideFlags: 0

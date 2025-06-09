@@ -7,8 +7,7 @@ namespace Peggle.Peggle.UI
 {
 	public class WorldSpaceUIDocument : MonoBehaviour
 	{
-		private const string transparentShader = "Unlit/Transparent";
-		private const string textureShader = "Unlit/Texture";
+		private const string shader = "Universal Render Pipeline/2D/Sprite-Lit-Default";
 		const string mainTex = "_MainTex";
 		static readonly int MainTex = Shader.PropertyToID("_MainTex");
 
@@ -27,14 +26,23 @@ namespace Peggle.Peggle.UI
 		RenderTexture renderTexture;
 		private Material material;
 
-		public void SetLabelText(string label, string text)
+		private Label _label;
+		const string scoreLabelName = "Score";
+
+		public void SetLabelText(string text)
 		{
 			if (uiDocument.rootVisualElement == null)
 			{
 				uiDocument.visualTreeAsset = visualTreeAsset;
 			}
+
+			if (_label == null)
+			{
+				_label = uiDocument.rootVisualElement.Q<Label>(scoreLabelName);
+			}
+
+			_label.text = text;
 			
-			uiDocument.rootVisualElement.Q<Label>(label).text = label;
 		}
 		private void Awake()
 		{
@@ -78,8 +86,7 @@ namespace Peggle.Peggle.UI
 
 		void CreateMaterial()
 		{
-			string shaderName = panelSettings.colorClearValue.a < 1.0f ? transparentShader : textureShader;
-			material = new Material(Shader.Find(shaderName));
+			material = new Material(Shader.Find(shader));
 			material.SetTexture(MainTex, renderTexture);
 			
 		}
@@ -92,7 +99,6 @@ namespace Peggle.Peggle.UI
 			}
 			uiDocument.panelSettings = panelSettings;
 			uiDocument.visualTreeAsset = visualTreeAsset;
-			
 		}
 		
 		void CreatePanelSettings()
@@ -120,10 +126,7 @@ namespace Peggle.Peggle.UI
 		{
 			var mf = InitializeMeshFilter();
 			InitializeMeshRenderer();
-
 			mf.sharedMesh = GetQuadMesh();
-			
-
 		}
 
 		MeshFilter InitializeMeshFilter()
