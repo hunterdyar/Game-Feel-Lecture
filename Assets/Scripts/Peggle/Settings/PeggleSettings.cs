@@ -4,14 +4,14 @@ using UnityEngine;
 namespace Peggle
 {
 	[System.Serializable]
-	public struct PeggleSettings
+	public class PeggleSettings
 	{
 		[Header("Ball Settings")]
 		public Ball ballPrefab;
 		public bool ballTrail;
 		public float ballTrailTime;
 		
-		[Header("Bouncinness Settings")]
+		[Header("Bounciness Settings")]
 		public float ballBounciness;
 		public float pegBounciness;
 		public float wallBounciness;
@@ -32,6 +32,11 @@ namespace Peggle
 		public Color basicPegColor;
 		public Color requiredPegColor;
 		public Color specialPegColor;
+		
+		[Header("Visual Settings")]
+		public bool bonkPegAnimationOnHit;
+		public bool pegsShowHitState;
+		public bool lightForBall;
 
 		[Header("Bucket Settings")]
 		public bool randomizeBucketStartPosition;

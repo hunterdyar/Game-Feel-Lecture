@@ -31,6 +31,9 @@ MonoBehaviour:
     basicPegColor: {r: 0.5707547, g: 0.8332159, b: 1, a: 1}
     requiredPegColor: {r: 1, g: 0.6465747, b: 0.1273585, a: 1}
     specialPegColor: {r: 1, g: 0.4575472, b: 0.99649024, a: 1}
+    bonkPegAnimationOnHit: 1
+    pegsShowHitState: 1
+    lightForBall: 0
     randomizeBucketStartPosition: 1
     bucketMoveSpeed: 4
     BallsPerGame: 3

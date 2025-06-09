@@ -152,5 +152,12 @@ namespace Peggle
 			OnRemainingBallCountChanged?.Invoke(_remainingBalls);
 			BallLeftPlay(ball);
 		}
+
+		private void OnValidate()
+		{
+			//editor hacking about.
+			Settings = _settings;
+			OnSettingsChanged?.Invoke(Settings);
+		}
 	}
 }

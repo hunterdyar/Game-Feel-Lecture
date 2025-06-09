@@ -12,7 +12,7 @@ namespace Peggle.Shapes
 
 		private IEnumerable<Vector3> LinePoints()
 		{
-			for (int i = 0; i < Count; i++)
+			for (int i = 0; i <= Count; i++)
 			{
 				float t = i / (float)Count;
 				yield return Vector3.Lerp(transform.GetChild(0).position, transform.GetChild(1).position, t);

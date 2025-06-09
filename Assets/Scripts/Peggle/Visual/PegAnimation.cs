@@ -48,7 +48,10 @@ namespace Peggle
 		
 		private void OnThisPegHit(int arg1, Collision2D arg2)
 		{
-			_impactTween.Start();
+			if (PeggleManager.Settings.bonkPegAnimationOnHit)
+			{
+				_impactTween.Start();
+			}
 		}
 
 		private void OnPegStateChanged(PegState state)
@@ -58,18 +61,22 @@ namespace Peggle
 				case PegState.ActiveToBeHit:
 					_pegRenderer.enabled = true;
 					_clearedOverlayRenderer.enabled = false;
+					_pegImpactOverlayRenderer.enabled = true;
 					break;
 				case PegState.LitUp:
 					_pegRenderer.enabled = true;
-					_clearedOverlayRenderer.enabled = true;
+					_clearedOverlayRenderer.enabled = PeggleManager.Settings.pegsShowHitState;
+					_pegImpactOverlayRenderer.enabled = true;
 					break;
 				case PegState.Cleared:
 					_clearedOverlayRenderer.enabled = false;
 					_pegRenderer.enabled = false;
+					_pegImpactOverlayRenderer.enabled = false;
 					break;
 				case PegState.ClearedByStuck:
 					_pegRenderer.enabled = false;
 					_clearedOverlayRenderer.enabled = false;
+					_pegImpactOverlayRenderer.enabled = false;
 					break;
 			}
 		}
@@ -85,7 +92,6 @@ namespace Peggle
 				case PegType.Required:
 					_pegRenderer.color = PeggleManager.Settings.requiredPegColor;
 					_pegImpactOverlayRenderer.color = PeggleManager.Settings.requiredPegColor;
-
 					break;
 				case PegType.SuperDuper:
 					_pegRenderer.color = PeggleManager.Settings.specialPegColor;

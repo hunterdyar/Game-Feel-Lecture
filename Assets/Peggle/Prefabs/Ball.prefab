@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8687820547321514721}
   - component: {fileID: -5564316220326424766}
   - component: {fileID: 3824727524208583939}
+  - component: {fileID: 9164491662928330812}
   - component: {fileID: 1506790021001499509}
   - component: {fileID: 6472307928382516226}
   m_Layer: 0
@@ -76,6 +77,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 154743c2e52f4012806b67cf02607570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &9164491662928330812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653196224364931327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08bafbc58bc048209ea315e5074766d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trailRenderer: {fileID: 7132930728102067402}
+  light2D: {fileID: 4124550790356534209}
 --- !u!58 &1506790021001499509
 CircleCollider2D:
   m_ObjectHideFlags: 0
