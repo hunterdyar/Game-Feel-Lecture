@@ -7,17 +7,22 @@ namespace Peggle
 	[RequireComponent(typeof(Rigidbody2D))]
 	public class Ball : MonoBehaviour
 	{
+		public Rigidbody2D RB => _rb;
 		private Rigidbody2D _rb;
 
 		void Awake()
 		{
 			_rb = GetComponent<Rigidbody2D>();
 		}
-		public void Launch(float launchSpeed)
+		public void Launch(float launchSpeed, Vector3 noise)
 		{
 			//the slightest noise to prevent the dreaded "hit the top of a sphere perfectly and bounce perfectly"
-			Vector3 noise = Random.insideUnitCircle * 0.001f;
-			_rb.AddForce(-transform.up*launchSpeed+noise, ForceMode2D.Impulse);
+			_rb.AddForce(noise-transform.up*launchSpeed, ForceMode2D.Impulse);
+		}
+
+		private void Start()
+		{
+			//BallPrediction.ConfigurePredictionBall(this);
 		}
 
 		private void OnCollisionEnter2D(Collision2D other)

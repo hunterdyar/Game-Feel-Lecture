@@ -1,6 +1,5 @@
 using System;
 using Peggle;
-using Peggle.Peggle.Prediction;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -63,9 +62,7 @@ public class Peg : MonoBehaviour, IBallHit
         PeggleManager.OnRoundStart -= OnRoundStart;
         PeggleManager.StartGame -= StartGame;
         BallPrediction.SetEnabled(gameObject, false);
-
     }
-
     private void OnRoundStart()
     {
         //
@@ -105,6 +102,7 @@ public class Peg : MonoBehaviour, IBallHit
         _pegState = PegState.Cleared;
         OnPegStateChanged?.Invoke(_pegState);
         _col.enabled = false;
+        BallPrediction.SetEnabled(gameObject, false);
         OnPegCleared?.Invoke(this);
     }
 }

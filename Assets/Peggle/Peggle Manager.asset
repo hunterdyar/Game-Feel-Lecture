@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Peggle Manager
   m_EditorClassIdentifier: 
   CurrentShotScore: 0
-  CurrentTotalScore: 4450
+  CurrentTotalScore: 930
   _settings:
     ballPrefab: {fileID: 3824727524208583939, guid: 2437f43a555a8e844b381b7806d0d4e9, type: 3}
     ballTrail: 1
@@ -26,6 +26,8 @@ MonoBehaviour:
     launchSpeed: 6.03
     limitLauncherAngle: 1
     degreesAwayFromUpToPrevent: 110
+    LauncherTrailTickCount: 168
+    LauncherPredictionEnabled: 1
     PegPrefab: {fileID: 3334641741667097732, guid: 2ce3653d1b5731741af1bb0289bf24c9, type: 3}
     delayBetweenPegClears: 0.05
     timeOfContinuousContactBeforeRemovingPeg: 2

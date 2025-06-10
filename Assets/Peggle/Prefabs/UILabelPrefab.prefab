@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0d86b7527354b11949eb73631c15c0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelWidth: 1280
+  panelWidth: 720
   panelHeight: 720
   panelScale: 1
   pixelsPerUnit: 500

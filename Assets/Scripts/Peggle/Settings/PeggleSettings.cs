@@ -23,7 +23,10 @@ namespace Peggle
 		public float launchSpeed;
 		public bool limitLauncherAngle;
 		public float degreesAwayFromUpToPrevent;
-
+		[Min(0)]
+		public int LauncherTrailTickCount;
+		public bool LauncherPredictionEnabled;
+		
 		[Header("Peg Settings")]
 		public Peg PegPrefab;
 		public float delayBetweenPegClears;
@@ -52,7 +55,7 @@ namespace Peggle
 		public int BaseScoreSpecialPeg;
 		public int BaseBucketScore;
 		public bool AnimateScoreChanges;
-		
+
 		public int GetScoreMultiplier(int remainingRequiredPegs)
 		{
 			//https://peggle.fandom.com/wiki/Scoring_System

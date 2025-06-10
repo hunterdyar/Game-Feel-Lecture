@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Random = UnityEngine.Random;
 
 namespace Peggle
 {
@@ -9,11 +10,14 @@ namespace Peggle
 		public PeggleManager peggleManager;
 		public InputActionReference Rotate;
 		public InputActionReference Launch;
+		private Vector3 Noise = Vector3.zero;
 		[SerializeField] Transform _launchPoint;
 		private void OnEnable()
 		{
 			Rotate.action.Enable();
 			Launch.action.Enable();
+		//	Noise = Random.insideUnitCircle * 0.001f;
+		Noise = Vector3.zero;
 		}
 
 		private void Update()
@@ -28,6 +32,8 @@ namespace Peggle
 			{
 				TryLaunch();
 			}
+			
+			BallPrediction.PredictLaunch(PeggleManager.Settings.ballPrefab, _launchPoint.position, _launchPoint.rotation, PeggleManager.Settings.launchSpeed, Noise);
 		}
 
 		void TryLaunch()
@@ -35,10 +41,17 @@ namespace Peggle
 			if (peggleManager.CanLaunchBall())
 			{
 				var b = Instantiate(PeggleManager.Settings.ballPrefab, _launchPoint.position, _launchPoint.rotation);
-				b.Launch(PeggleManager.Settings.launchSpeed);
+				b.Launch(PeggleManager.Settings.launchSpeed, Noise);
 				peggleManager.BallLaunched(b);
+				ResetNoise();
 				//apply ball speed?
 			}
+		}
+
+		void ResetNoise()
+		{
+			// Noise = Random.insideUnitCircle * 0.001f;
+			Noise = Vector3.zero;
 		}
 
 		private void DoRotate(float delta)
@@ -61,6 +74,7 @@ namespace Peggle
 
 			float r = delta * Time.deltaTime * PeggleManager.Settings.launcherRotationSpeed;
 			transform.Rotate(Vector3.forward, r);
+			BallPrediction.MarkDirty();
 		}
 	}
 }
