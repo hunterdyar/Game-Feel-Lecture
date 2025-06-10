@@ -1,6 +1,4 @@
-﻿using System;
-using BTween;
-using Unity.VisualScripting;
+﻿using BTween;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.Pool;
@@ -12,7 +10,9 @@ namespace Peggle.Peggle.UI
 	{
 		private UIDocument _doc;
 		private Label _totalScoreLabel;
+		private LagNumberUpdater _totalScoreUpdater;
 		private Label _shotScoreLabel;
+		private LagNumberUpdater _shotScoreUpdater;
 
 		private Transform _pool;
 		public WorldSpaceUIDocument labelUIPrefab;
@@ -31,7 +31,22 @@ namespace Peggle.Peggle.UI
 			_totalScoreLabel = _doc.rootVisualElement.Q<Label>("TotalScore");
 			_shotScoreLabel = _doc.rootVisualElement.Q<Label>("ShotScore");
 			uiDocumentPool = new ObjectPool<WorldSpaceUIDocument>(Create, OnTake, OnRelease, OnDestroyPool);
+			
+			_totalScoreUpdater = new LagNumberUpdater();
+			_totalScoreUpdater.OnCurrentChanged += i =>
+			{
+				_totalScoreLabel.text = i.ToString();
+			} ;
+			_totalScoreLabel.text = "0";
+
+			_shotScoreUpdater = new LagNumberUpdater();
+			_shotScoreUpdater.OnCurrentChanged += i =>
+			{
+				_shotScoreLabel.text = i.ToString();
+			};
+			_shotScoreLabel.text = "0";
 		}
+		
 
 		private void OnEnable()
 		{
@@ -49,11 +64,30 @@ namespace Peggle.Peggle.UI
 
 		private void OnShotScoreChanged(int score)
 		{
-			_shotScoreLabel.text = score.ToString("D");
+			if (PeggleManager.Settings.AnimateScoreChanges)
+			{
+				_shotScoreUpdater.SetDesired(score);
+			}
+			else
+			{
+				_shotScoreUpdater.SetCurrent(score);
+			}
 		}
 		private void OnTotalScoreChanged(int score)
 		{
-			_totalScoreLabel.text = score.ToString("D");
+			if (PeggleManager.Settings.AnimateScoreChanges)
+			{
+				_totalScoreUpdater.SetDesired(score);
+			}
+			else
+			{
+				_totalScoreUpdater.SetCurrent(score);
+			}
+		}
+		private void Update()
+		{
+			_shotScoreUpdater.Tick(Time.deltaTime);
+			_totalScoreUpdater.Tick(Time.deltaTime);
 		}
 
 		private void OnScoreEarned(Vector3 worldPos, int points)
@@ -61,7 +95,6 @@ namespace Peggle.Peggle.UI
 			var spawnPos = worldPos + Vector3.up*0.5f;
 			WorldSpaceUIDocument instance = uiDocumentPool.Get();
 			instance.transform.SetPositionAndRotation(spawnPos, Quaternion.identity);
-			Debug.Log(points);
 			instance.SetLabelText(points.ToString());
 			
 			//create tween.

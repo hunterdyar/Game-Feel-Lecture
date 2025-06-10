@@ -50,7 +50,9 @@ namespace Peggle
 		[Header("Score Settings")] public int BaseScoreNormalPeg;
 		public int BaseScoreRequiredPeg;
 		public int BaseScoreSpecialPeg;
-
+		public int BaseBucketScore;
+		public bool AnimateScoreChanges;
+		
 		public int GetScoreMultiplier(int remainingRequiredPegs)
 		{
 			//https://peggle.fandom.com/wiki/Scoring_System

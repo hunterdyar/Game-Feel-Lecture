@@ -162,13 +162,13 @@ namespace Peggle
 			var multi = _settings.GetScoreMultiplier(_remainingRequiredPegCount);
 			var baseScore = _settings.GetBaseScore(peg.PegType);
 			int points = multi * baseScore;
-			GetScore(peg, points);
+			GetScore(peg.transform.position, points);
 		}
 
-		private void GetScore(Peg peg, int points)
+		private void GetScore(Vector3 position, int points)
 		{
 			CurrentShotScore += points;
-			OnScoreEarned?.Invoke(peg.transform.position,points);
+			OnScoreEarned?.Invoke(position,points);
 			OnShotScoreChanged?.Invoke(CurrentShotScore);
 		}
 
@@ -192,6 +192,7 @@ namespace Peggle
 		{
 			_remainingBalls++;
 			OnRemainingBallCountChanged?.Invoke(_remainingBalls);
+			GetScore(ball.transform.position, _settings.BaseBucketScore);
 			BallLeftPlay(ball);
 		}
 
