@@ -19,7 +19,12 @@ namespace Peggle.Peggle.UI
 		private IObjectPool<WorldSpaceUIDocument> uiDocumentPool;
 
 		WorldSpaceUIDocument Create() => Instantiate(labelUIPrefab, _pool, true);
-		void OnTake(WorldSpaceUIDocument uiDocument) => uiDocument.gameObject.SetActive(true);
+		void OnTake(WorldSpaceUIDocument uiDocument)
+		{
+			uiDocument.transform.localScale = labelUIPrefab.transform.localScale;
+			uiDocument.gameObject.SetActive(true);
+		}
+
 		void OnRelease(WorldSpaceUIDocument uiDocument) => uiDocument.gameObject.SetActive(false);
 		void OnDestroyPool(WorldSpaceUIDocument uiDocument) => Destroy(uiDocument.gameObject);
 		private void Awake()
@@ -98,11 +103,12 @@ namespace Peggle.Peggle.UI
 			instance.SetLabelText(points.ToString());
 			
 			//create tween.
+			var startScale = instance.transform.localScale;
 			instance.transform.BMoveFromTo(spawnPos, spawnPos + Vector3.up * 0.5f, 0.5f, Ease.EaseOutCirc)
-				//.Then(instance.transform.BScaleFromTo(instance.transform.localScale,Vector3.zero, 0.15f, Ease.EaseInCirc))
+				.Then(instance.transform.BScaleFromTo(startScale, Vector3.zero, 0.1f, Ease.EaseInCirc, false))
 				.OnComplete(() =>
 				{
-					uiDocumentPool.Release(instance);
+						uiDocumentPool.Release(instance);
 				});
 
 			//onfinish, release.
