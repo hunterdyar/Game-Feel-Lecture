@@ -35,14 +35,10 @@ namespace Peggle.Peggle.UI
 			{
 				uiDocument.visualTreeAsset = visualTreeAsset;
 			}
-
-			if (_label == null)
-			{
-				_label = uiDocument.rootVisualElement.Q<Label>(scoreLabelName);
-			}
+			
+			_label = uiDocument.rootVisualElement.Q<Label>(scoreLabelName);
 
 			_label.text = text;
-			
 		}
 		private void Awake()
 		{

@@ -58,13 +58,15 @@ namespace Peggle.Peggle.UI
 
 		private void OnScoreEarned(Vector3 worldPos, int points)
 		{
-			var spawnPos = worldPos + Vector3.up;
+			var spawnPos = worldPos + Vector3.up*0.5f;
 			WorldSpaceUIDocument instance = uiDocumentPool.Get();
 			instance.transform.SetPositionAndRotation(spawnPos, Quaternion.identity);
+			Debug.Log(points);
 			instance.SetLabelText(points.ToString());
 			
 			//create tween.
-			instance.transform.BMoveFromTo(worldPos, worldPos + Vector3.up * 0.5f, 0.5f, Ease.EaseOutCirc)
+			instance.transform.BMoveFromTo(spawnPos, spawnPos + Vector3.up * 0.5f, 0.5f, Ease.EaseOutCirc)
+				//.Then(instance.transform.BScaleFromTo(instance.transform.localScale,Vector3.zero, 0.15f, Ease.EaseInCirc))
 				.OnComplete(() =>
 				{
 					uiDocumentPool.Release(instance);
