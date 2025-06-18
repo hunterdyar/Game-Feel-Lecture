@@ -1,0 +1,6 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="VisualElement" style="flex-grow: 1; justify-content: center; align-self: center; align-content: center;">
+        <ui:Label text="Label" parse-escape-sequences="true" binding-path="Header" name="Header" style="-unity-text-align: middle-center; font-size: 40px; -unity-font-style: bold; color: rgb(238, 238, 238); -unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&amp;guid=d214e8b59a071ff46ad5654b96317e0a&amp;type=3#NotInter-Regular&quot;);" />
+        <ui:Label text="Label" name="Subheader" style="font-size: 32px; color: rgb(255, 255, 255); -unity-text-align: middle-center;" />
+    </ui:VisualElement>
+</ui:UXML>

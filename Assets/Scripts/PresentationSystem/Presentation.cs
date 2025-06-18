@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using PresentationSystem.Viewer.SlideViewers;
 using UnityEngine;
 
@@ -13,26 +14,37 @@ namespace PresentationSystem
 		private int _currentSlide;
 		private SlideBase _visibleSlide;
 
-		private SlideBase[] _slides;
+		private List<SlideBase> _slides;
 		private int startingSlide = 0;
 
 		public static Func<SlideChangeEvent, SlideChangeEvent> OnChangeSlide;
 		
 		private void Awake()
 		{
-			_slides = new SlideBase[transform.childCount];
-			for (int i = 0; i < transform.childCount; i++)
-			{
-				var child = transform.GetChild(i);
-				_slides[i] = child.GetComponent<SlideBase>();
-				if (_slides[i] == null)
-				{
-					Debug.LogError($"All Children of Presentation should be a slide. {child.name} is not.", child);
-				}
-				child.gameObject.SetActive(false);
-			}
-
+			//must be.
+			transform.tag = "SlideGroup";
+			_slides = new List<SlideBase>();
+			AddSlideInitiate(transform);
 			_currentSlide = startingSlide;
+		}
+
+		private void AddSlideInitiate(Transform t)
+		{
+			var s = t.GetComponent<SlideBase>();
+			if (!s)
+			{
+				for (int i = 0; i < t.childCount; i++)
+				{
+					var child = t.GetChild(i);
+					AddSlideInitiate(child);
+				}
+			}
+			else
+			{
+				_slides.Add(s);
+				s.gameObject.SetActive(false);
+
+			}
 		}
 
 		void Start()
@@ -55,7 +67,7 @@ namespace PresentationSystem
 			}
 			
 			_currentSlide++;
-			if (_currentSlide >= _slides.Length)
+			if (_currentSlide >= _slides.Count)
 			{
 				_currentSlide = 0;
 			}
@@ -69,7 +81,7 @@ namespace PresentationSystem
 
 			if (_currentSlide < 0)
 			{
-				_currentSlide = _slides.Length-1;
+				_currentSlide = _slides.Count -1;
 			}
 			StartCoroutine(GoToSlide(_slides[_currentSlide]));
 		}

@@ -25,9 +25,13 @@ namespace Peggle
 
 		private void Follow()
 		{
-			transform.position = _target.position;
-			transform.rotation = _target.rotation;
-			transform.localScale = _target.localScale;
+			if (_target != null)
+			{
+				transform.position = _target.position;
+				transform.rotation = _target.rotation;
+				transform.localScale = _target.localScale;
+			}
 		}
+		
 	}
 }

@@ -4,12 +4,30 @@ using UnityEngine;
 
 namespace Diagrams
 {
+	[System.Serializable]
+	public struct InteractionLoopItem
+	{
+		public AnimatedDotAnimator AnimatedDot;
+		public GameObject Label;
+		
+		public void SetActive(bool active)
+		{
+			if (AnimatedDot != null)
+			{
+				AnimatedDot.SetAnimated(active);
+			}
+			if (Label != null)
+			{
+				Label.SetActive(active);
+			}
+		}
+	}
 	public class InteractionLoopSequencer : MonoBehaviour
 	{
-		public AnimatedDotAnimator _playerToSystem;
-		public AnimatedDotAnimator _systemFeedback;
-		public AnimatedDotAnimator _systemToPlayer;
-		public AnimatedDotAnimator _playerRection;
+		public InteractionLoopItem _playerToSystem;
+		public InteractionLoopItem _systemFeedback;
+		public InteractionLoopItem _systemToPlayer;
+		public InteractionLoopItem _playerRection;
 		private int _index;
 
 		private void OnEnable()
@@ -57,10 +75,10 @@ namespace Diagrams
 			bool _sf = index == 1;
 			bool _stp = index == 2;
 			bool _pr = index == 3;
-			_playerToSystem?.SetAnimated(_pts);
-			_systemFeedback?.SetAnimated(_sf);
-			_systemToPlayer?.SetAnimated(_stp);
-			_playerRection?.SetAnimated(_pr);
+			_playerToSystem.SetActive(_pts);
+			_systemFeedback.SetActive(_sf);
+			_systemToPlayer.SetActive(_stp);
+			_playerRection.SetActive(_pr);
 		}
 	}
 }

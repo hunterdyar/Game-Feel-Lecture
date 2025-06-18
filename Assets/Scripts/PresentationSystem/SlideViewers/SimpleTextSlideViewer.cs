@@ -8,6 +8,7 @@ using UnityEngine.UIElements;
 [RequireComponent(typeof(UIDocument))]
 public class SimpleTextSlideViewer : SlideBase
 {
+	[TextArea]
 	public string Text;
 	private Label _label;
 	
