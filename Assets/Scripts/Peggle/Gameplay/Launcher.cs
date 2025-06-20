@@ -7,6 +7,7 @@ namespace Peggle
 {
 	public class Launcher : MonoBehaviour
 	{
+		public static Action<Ball> OnBallLaunch;
 		public PeggleManager peggleManager;
 		public InputActionReference Rotate;
 		public InputActionReference Launch;
@@ -43,6 +44,7 @@ namespace Peggle
 				var b = Instantiate(PeggleManager.Settings.ballPrefab, _launchPoint.position, _launchPoint.rotation);
 				b.Launch(PeggleManager.Settings.launchSpeed, Noise);
 				peggleManager.BallLaunched(b);
+				OnBallLaunch?.Invoke(b);
 				ResetNoise();
 				//apply ball speed?
 			}

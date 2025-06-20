@@ -10,6 +10,7 @@ namespace PresentationSystem.Viewer.SlideViewers
 		[HideInInspector, SerializeField] protected Presentation _presentation;
 		public PresentationSettings Settings => _presentation.PresentationSettings;
 		protected UIDocument _uiDocument;
+		public Action OnEnterSlide;
 		protected virtual void Awake()
 		{
 			_uiDocument = gameObject.GetComponent<UIDocument>();

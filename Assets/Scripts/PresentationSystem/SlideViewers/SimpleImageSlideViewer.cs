@@ -20,6 +20,7 @@ public class SimpleImageSlideViewer : SlideBase
 
 	public override IEnumerator EnterSlide()
 	{
+		OnEnterSlide?.Invoke();
 		yield break;
 	}
 

@@ -12,11 +12,14 @@ EditorBuildSettings:
     path: Assets/Scenes/test scene.unity
     guid: 04f850e8e891e60409f071cc108a89d7
   - enabled: 1
-    path: Assets/Scenes/Peggle/PeggleTemp.unity
+    path: Assets/Scenes/Peggle/Peggle.unity
     guid: bd08167a9a55e4b4482aced580356b2b
   - enabled: 1
     path: Assets/Scenes/Diagrams/InteractionLoop.unity
     guid: 14b8c6dd084b8cd4791bc8b1bc5c280f
+  - enabled: 1
+    path: Assets/Scenes/Dino/DinoJump.unity
+    guid: 8c9cfa26abfee488c85f1582747f6a02
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

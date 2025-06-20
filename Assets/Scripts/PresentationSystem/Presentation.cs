@@ -15,7 +15,7 @@ namespace PresentationSystem
 		private SlideBase _visibleSlide;
 
 		private List<SlideBase> _slides;
-		private int startingSlide = 0;
+		[SerializeField] private int startingSlide = 0;
 
 		public static Func<SlideChangeEvent, SlideChangeEvent> OnChangeSlide;
 		

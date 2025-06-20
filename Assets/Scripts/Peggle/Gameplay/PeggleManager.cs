@@ -15,6 +15,7 @@ namespace Peggle
 		public static Action<int> OnRemainingBallCountChanged;
 		public static Action PrepareGame;
 		public static Action StartGame;
+		public static Action OnBallInBucket;
 		
 		public static Action<Vector3, int> OnScoreEarned;
 		public static Action<int> OnShotScoreChanged;
@@ -38,7 +39,8 @@ namespace Peggle
 		private List<Peg> _allPegs = new List<Peg>();
 		private List<Peg> _requiredPegs => _allPegs.Where(x => x.PegType == PegType.Required).ToList();
 		private int _remainingRequiredPegCount;
-		private void SetSettings(PeggleSettings newSettings)
+
+		public void SetSettings(PeggleSettings newSettings)
 		{
 			_settings = newSettings;
 			Settings = _settings;
@@ -51,6 +53,23 @@ namespace Peggle
 		}
 		public void StartNewGame(RoundManager roundManager)
 		{
+			if (ActiveBalls != null)
+			{
+				for (int i = ActiveBalls.Count - 1; i >= 0; i--)
+				{
+					if (ActiveBalls[i] != null)
+					{
+						Destroy(ActiveBalls[i].gameObject);
+					}
+				}
+
+				ActiveBalls.Clear();
+			}
+			else
+			{
+				ActiveBalls = new List<Ball>();
+			}
+
 			//call again just to force update.
 			OnSettingsChanged?.Invoke(Settings);
 			//
@@ -194,6 +213,7 @@ namespace Peggle
 			OnRemainingBallCountChanged?.Invoke(_remainingBalls);
 			GetScore(ball.transform.position, _settings.BaseBucketScore);
 			BallLeftPlay(ball);
+			OnBallInBucket?.Invoke();
 		}
 
 		private void OnValidate()

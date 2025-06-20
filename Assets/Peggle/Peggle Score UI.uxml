@@ -4,5 +4,7 @@
         <ui:Label text="12345" name="ShotScore" style="color: rgb(243, 243, 243);" />
         <ui:Label text="Total Score:" style="color: rgb(243, 243, 243);" />
         <ui:Label text="12345" name="TotalScore" style="color: rgb(243, 243, 243);" />
+        <ui:Label text="Shots Remaining:" style="color: rgb(243, 243, 243);" />
+        <ui:Label text="12345" name="BallsLeft" style="color: rgb(243, 243, 243);" />
     </ui:VisualElement>
 </ui:UXML>

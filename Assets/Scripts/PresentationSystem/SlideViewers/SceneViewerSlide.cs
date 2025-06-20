@@ -33,7 +33,7 @@ public class SceneViewerSlide : SlideBase
 		_camera.gameObject.SetActive(false);
 		_label.parent.visible = DisplayOverlay;
 		SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
-		
+		OnEnterSlide?.Invoke();
 		yield break;
 	}
 

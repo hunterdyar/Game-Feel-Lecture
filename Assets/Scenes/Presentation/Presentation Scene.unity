@@ -119,6 +119,110 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &60644892
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 60644893}
+  - component: {fileID: 60644895}
+  - component: {fileID: 60644894}
+  m_Layer: 0
+  m_Name: and confusing
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &60644893
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60644892}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 66115178}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &60644894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60644892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: 01e01a81faacd47439d1cda9b44f3e6b, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: d1d1adb8352026d48ae990a617fbdddd, type: 3}
+  m_SortingOrder: 0
+  m_WorldSpaceSizeMode: 1
+  m_WorldSpaceWidth: 1920
+  m_WorldSpaceHeight: 1080
+--- !u!114 &60644895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60644892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96b11c1071c83f646a5c3664746dc65f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _presentation: {fileID: 2102221279}
+  Text: 'worse than boring: confusing'
+--- !u!1 &66115177
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 66115178}
+  m_Layer: 0
+  m_Name: Feedbacks and Juice
+  m_TagString: SlideGroup
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &66115178
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66115177}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 1906109872}
+  - {fileID: 1842611088}
+  - {fileID: 266983779}
+  - {fileID: 60644893}
+  - {fileID: 2052060559}
+  - {fileID: 277192494}
+  - {fileID: 675984887}
+  m_Father: {fileID: 2102221278}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &117060193
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,6 +294,255 @@ MonoBehaviour:
     changes
 
     that impact game feel?'
+--- !u!1 &137903006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 137903007}
+  - component: {fileID: 137903009}
+  - component: {fileID: 137903008}
+  m_Layer: 0
+  m_Name: Dino
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &137903007
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137903006}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1320929929}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &137903008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137903006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92e8a12faac744ea98803537726a1c05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _presentation: {fileID: 2102221279}
+  sceneName: DinoJump
+  OverlayText: 
+  DisplayOverlay: 1
+--- !u!114 &137903009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137903006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: 01e01a81faacd47439d1cda9b44f3e6b, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 4b73ccb1d3270c44fa4778cb04216eab, type: 3}
+  m_SortingOrder: 0
+  m_WorldSpaceSizeMode: 1
+  m_WorldSpaceWidth: 1920
+  m_WorldSpaceHeight: 1080
+--- !u!1 &266983778
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 266983779}
+  - component: {fileID: 266983781}
+  - component: {fileID: 266983780}
+  m_Layer: 0
+  m_Name: so it's pretty boring
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &266983779
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266983778}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 66115178}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &266983780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266983778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: 01e01a81faacd47439d1cda9b44f3e6b, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: d1d1adb8352026d48ae990a617fbdddd, type: 3}
+  m_SortingOrder: 0
+  m_WorldSpaceSizeMode: 1
+  m_WorldSpaceWidth: 1920
+  m_WorldSpaceHeight: 1080
+--- !u!114 &266983781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266983778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96b11c1071c83f646a5c3664746dc65f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _presentation: {fileID: 2102221279}
+  Text: boring
+--- !u!1 &277192493
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 277192494}
+  - component: {fileID: 277192497}
+  - component: {fileID: 277192496}
+  - component: {fileID: 277192495}
+  m_Layer: 0
+  m_Name: colorful peggle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &277192494
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277192493}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 66115178}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &277192495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277192493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56ad669181ed476c9ced4245cd26ade5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _peggleManager: {fileID: 11400000, guid: ee80a6bded253b94d94bd4b75467dcd6, type: 2}
+  Settings:
+    ballPrefab: {fileID: 3824727524208583939, guid: 2437f43a555a8e844b381b7806d0d4e9, type: 3}
+    ballTrail: 0
+    ballTrailTime: 0.4
+    ballBounciness: 0.75
+    pegBounciness: 0.6
+    wallBounciness: 0.6
+    bucketBounciness: 1
+    launcherRotationSpeed: 50
+    launchSpeed: 6.03
+    limitLauncherAngle: 1
+    degreesAwayFromUpToPrevent: 110
+    LauncherTrailTickCount: 168
+    LauncherPredictionEnabled: 0
+    PegPrefab: {fileID: 3334641741667097732, guid: 2ce3653d1b5731741af1bb0289bf24c9, type: 3}
+    delayBetweenPegClears: 0.05
+    timeOfContinuousContactBeforeRemovingPeg: 2
+    shapeRotationSpeed: 3
+    basicPegColor: {r: 0.57254905, g: 0.83137256, b: 1, a: 1}
+    requiredPegColor: {r: 1, g: 0.64705884, b: 0.1254902, a: 1}
+    specialPegColor: {r: 1, g: 0.45882353, b: 0.99607843, a: 1}
+    bonkPegAnimationOnHit: 0
+    pegsShowHitState: 0
+    lightForBall: 0
+    randomizeBucketStartPosition: 0
+    bucketMoveSpeed: 0
+    BallsPerGame: 5
+    RequiredPegCount: 3
+    BaseScoreNormalPeg: 10
+    BaseScoreRequiredPeg: 100
+    BaseScoreSpecialPeg: 500
+    BaseBucketScore: 1000
+    AnimateScoreChanges: 0
+--- !u!114 &277192496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277192493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: 01e01a81faacd47439d1cda9b44f3e6b, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 4b73ccb1d3270c44fa4778cb04216eab, type: 3}
+  m_SortingOrder: 0
+  m_WorldSpaceSizeMode: 1
+  m_WorldSpaceWidth: 1920
+  m_WorldSpaceHeight: 1080
+--- !u!114 &277192497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277192493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92e8a12faac744ea98803537726a1c05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _presentation: {fileID: 2102221279}
+  sceneName: Peggle
+  OverlayText: 'State: Colorful Pegs'
+  DisplayOverlay: 1
 --- !u!1 &391685307
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,6 +746,121 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _presentation: {fileID: 2102221279}
   Image: {fileID: 2800000, guid: 76b57d14a82cefb4480a35041c0e247b, type: 3}
+--- !u!1 &675984886
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 675984887}
+  - component: {fileID: 675984890}
+  - component: {fileID: 675984889}
+  - component: {fileID: 675984888}
+  m_Layer: 0
+  m_Name: hit state peggle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &675984887
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675984886}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 66115178}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &675984888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675984886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56ad669181ed476c9ced4245cd26ade5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _peggleManager: {fileID: 11400000, guid: ee80a6bded253b94d94bd4b75467dcd6, type: 2}
+  Settings:
+    ballPrefab: {fileID: 3824727524208583939, guid: 2437f43a555a8e844b381b7806d0d4e9, type: 3}
+    ballTrail: 0
+    ballTrailTime: 0.4
+    ballBounciness: 0.75
+    pegBounciness: 0.6
+    wallBounciness: 0.6
+    bucketBounciness: 1
+    launcherRotationSpeed: 50
+    launchSpeed: 6.03
+    limitLauncherAngle: 1
+    degreesAwayFromUpToPrevent: 110
+    LauncherTrailTickCount: 168
+    LauncherPredictionEnabled: 0
+    PegPrefab: {fileID: 3334641741667097732, guid: 2ce3653d1b5731741af1bb0289bf24c9, type: 3}
+    delayBetweenPegClears: 0.05
+    timeOfContinuousContactBeforeRemovingPeg: 2
+    shapeRotationSpeed: 3
+    basicPegColor: {r: 0.57254905, g: 0.83137256, b: 1, a: 1}
+    requiredPegColor: {r: 1, g: 0.64705884, b: 0.1254902, a: 1}
+    specialPegColor: {r: 1, g: 0.45882353, b: 0.99607843, a: 1}
+    bonkPegAnimationOnHit: 0
+    pegsShowHitState: 1
+    lightForBall: 0
+    randomizeBucketStartPosition: 0
+    bucketMoveSpeed: 0
+    BallsPerGame: 5
+    RequiredPegCount: 3
+    BaseScoreNormalPeg: 10
+    BaseScoreRequiredPeg: 100
+    BaseScoreSpecialPeg: 500
+    BaseBucketScore: 1000
+    AnimateScoreChanges: 0
+--- !u!114 &675984889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675984886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: 01e01a81faacd47439d1cda9b44f3e6b, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 4b73ccb1d3270c44fa4778cb04216eab, type: 3}
+  m_SortingOrder: 0
+  m_WorldSpaceSizeMode: 1
+  m_WorldSpaceWidth: 1920
+  m_WorldSpaceHeight: 1080
+--- !u!114 &675984890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675984886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92e8a12faac744ea98803537726a1c05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _presentation: {fileID: 2102221279}
+  sceneName: Peggle
+  OverlayText: 'State: Pegs Hit vs Not'
+  DisplayOverlay: 1
 --- !u!1 &1101017053
 GameObject:
   m_ObjectHideFlags: 0
@@ -525,6 +993,7 @@ Transform:
   - {fileID: 1704475677}
   - {fileID: 669322646}
   - {fileID: 1840302966}
+  - {fileID: 137903007}
   m_Father: {fileID: 2102221278}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1354752273
@@ -1185,6 +1654,7 @@ GameObject:
   - component: {fileID: 1842611088}
   - component: {fileID: 1842611090}
   - component: {fileID: 1842611089}
+  - component: {fileID: 1842611091}
   m_Layer: 0
   m_Name: simplest peggle
   m_TagString: Untagged
@@ -1200,12 +1670,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1842611087}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2102221278}
+  m_Father: {fileID: 66115178}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1842611089
 MonoBehaviour:
@@ -1239,9 +1709,55 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _presentation: {fileID: 2102221279}
-  sceneName: PeggleTemp
-  OverlayText: Peggle
+  sceneName: Peggle
+  OverlayText: Basic Peggle
   DisplayOverlay: 1
+--- !u!114 &1842611091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842611087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56ad669181ed476c9ced4245cd26ade5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _peggleManager: {fileID: 11400000, guid: ee80a6bded253b94d94bd4b75467dcd6, type: 2}
+  Settings:
+    ballPrefab: {fileID: 3824727524208583939, guid: 2437f43a555a8e844b381b7806d0d4e9, type: 3}
+    ballTrail: 0
+    ballTrailTime: 0.4
+    ballBounciness: 0.75
+    pegBounciness: 0.6
+    wallBounciness: 0.6
+    bucketBounciness: 1
+    launcherRotationSpeed: 50
+    launchSpeed: 6.03
+    limitLauncherAngle: 1
+    degreesAwayFromUpToPrevent: 110
+    LauncherTrailTickCount: 168
+    LauncherPredictionEnabled: 0
+    PegPrefab: {fileID: 3334641741667097732, guid: 2ce3653d1b5731741af1bb0289bf24c9, type: 3}
+    delayBetweenPegClears: 0.05
+    timeOfContinuousContactBeforeRemovingPeg: 2
+    shapeRotationSpeed: 3
+    basicPegColor: {r: 1, g: 1, b: 1, a: 1}
+    requiredPegColor: {r: 1, g: 1, b: 1, a: 1}
+    specialPegColor: {r: 1, g: 1, b: 1, a: 1}
+    bonkPegAnimationOnHit: 0
+    pegsShowHitState: 0
+    lightForBall: 0
+    randomizeBucketStartPosition: 0
+    bucketMoveSpeed: 0
+    BallsPerGame: 3
+    RequiredPegCount: 10
+    BaseScoreNormalPeg: 10
+    BaseScoreRequiredPeg: 100
+    BaseScoreSpecialPeg: 500
+    BaseBucketScore: 1000
+    AnimateScoreChanges: 0
 --- !u!1 &1906109871
 GameObject:
   m_ObjectHideFlags: 0
@@ -1254,7 +1770,7 @@ GameObject:
   - component: {fileID: 1906109873}
   - component: {fileID: 1906109874}
   m_Layer: 0
-  m_Name: Simple Text Slide (2)
+  m_Name: Feedback Intro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1273,7 +1789,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2102221278}
+  m_Father: {fileID: 66115178}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1906109873
 MonoBehaviour:
@@ -1288,7 +1804,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _presentation: {fileID: 2102221279}
-  Text: Slide 3
+  Text: 'Feedback & Juice
+
+'
 --- !u!114 &1906109874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1521,6 +2039,74 @@ MonoBehaviour:
 
     4.
     Repeat.'
+--- !u!1 &2052060558
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2052060559}
+  - component: {fileID: 2052060561}
+  - component: {fileID: 2052060560}
+  m_Layer: 0
+  m_Name: Communicate State
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2052060559
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052060558}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 66115178}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2052060560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052060558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: 01e01a81faacd47439d1cda9b44f3e6b, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: d1d1adb8352026d48ae990a617fbdddd, type: 3}
+  m_SortingOrder: 0
+  m_WorldSpaceSizeMode: 1
+  m_WorldSpaceWidth: 1920
+  m_WorldSpaceHeight: 1080
+--- !u!114 &2052060561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052060558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96b11c1071c83f646a5c3664746dc65f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _presentation: {fileID: 2102221279}
+  Text: 'Communicate The State
+
+    (show, don''t tell)'
 --- !u!1 &2079261277
 GameObject:
   m_ObjectHideFlags: 0
@@ -1629,8 +2215,7 @@ Transform:
   - {fileID: 1837151999}
   - {fileID: 1320929929}
   - {fileID: 1282699174}
-  - {fileID: 1906109872}
-  - {fileID: 1842611088}
+  - {fileID: 66115178}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2102221279
@@ -1646,6 +2231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _presentationSettings: {fileID: 11400000, guid: dde697782f90c22499f4bf22a04b1f12, type: 2}
+  startingSlide: 19
 --- !u!114 &2102221280
 MonoBehaviour:
   m_ObjectHideFlags: 0

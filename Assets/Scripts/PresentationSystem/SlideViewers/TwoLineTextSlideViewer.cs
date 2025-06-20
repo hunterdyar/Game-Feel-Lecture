@@ -26,6 +26,7 @@ namespace PresentationSystem.Viewer.SlideViewers
 
 		public override IEnumerator EnterSlide()
 		{
+			OnEnterSlide?.Invoke();
 			yield break;
 		}
 

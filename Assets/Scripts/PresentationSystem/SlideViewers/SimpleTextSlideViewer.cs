@@ -22,6 +22,7 @@ public class SimpleTextSlideViewer : SlideBase
 
 	public override IEnumerator EnterSlide()
 	{
+		OnEnterSlide?.Invoke();
 		yield break;
 	}
 

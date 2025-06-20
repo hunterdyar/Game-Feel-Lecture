@@ -13,6 +13,7 @@ namespace Peggle.Peggle.UI
 		private LagNumberUpdater _totalScoreUpdater;
 		private Label _shotScoreLabel;
 		private LagNumberUpdater _shotScoreUpdater;
+		private Label _ballsLeftLabel;
 
 		private Transform _pool;
 		public WorldSpaceUIDocument labelUIPrefab;
@@ -35,6 +36,7 @@ namespace Peggle.Peggle.UI
 			_doc = GetComponent<UIDocument>();
 			_totalScoreLabel = _doc.rootVisualElement.Q<Label>("TotalScore");
 			_shotScoreLabel = _doc.rootVisualElement.Q<Label>("ShotScore");
+			_ballsLeftLabel = _doc.rootVisualElement.Q<Label>("BallsLeft");
 			uiDocumentPool = new ObjectPool<WorldSpaceUIDocument>(Create, OnTake, OnRelease, OnDestroyPool);
 			
 			_totalScoreUpdater = new LagNumberUpdater();
@@ -58,13 +60,21 @@ namespace Peggle.Peggle.UI
 			PeggleManager.OnShotScoreChanged += OnShotScoreChanged;
 			PeggleManager.OnTotalScoreChanged += OnTotalScoreChanged;
 			PeggleManager.OnScoreEarned += OnScoreEarned;
+			PeggleManager.OnRemainingBallCountChanged += OnRemainingBallCountChanged;
 		}
 
+	
 		private void OnDisable()
 		{
 			PeggleManager.OnShotScoreChanged -= OnShotScoreChanged;
 			PeggleManager.OnTotalScoreChanged -= OnTotalScoreChanged;
 			PeggleManager.OnScoreEarned -= OnScoreEarned;
+			PeggleManager.OnRemainingBallCountChanged += OnRemainingBallCountChanged;
+		}
+
+		private void OnRemainingBallCountChanged(int c)
+		{
+			_ballsLeftLabel.text = c.ToString();
 		}
 
 		private void OnShotScoreChanged(int score)
@@ -97,20 +107,19 @@ namespace Peggle.Peggle.UI
 
 		private void OnScoreEarned(Vector3 worldPos, int points)
 		{
-			var spawnPos = worldPos + Vector3.up*0.5f;
-			WorldSpaceUIDocument instance = uiDocumentPool.Get();
-			instance.transform.SetPositionAndRotation(spawnPos, Quaternion.identity);
-			instance.SetLabelText(points.ToString());
-			
-			//create tween.
-			instance.transform.BMoveFromTo(spawnPos, spawnPos + Vector3.up * 0.5f, 0.5f, Ease.EaseOutCirc)
-				.Then(instance.transform.BScaleFromTo(instance.transform.localScale, Vector3.zero, 0.1f, Ease.EaseInCirc, false))
-				.OnComplete(() =>
-				{
-					uiDocumentPool.Release(instance);
-				});
+			if (PeggleManager.Settings.AnimateScoreChanges)
+			{
+				var spawnPos = worldPos + Vector3.up * 0.5f;
+				WorldSpaceUIDocument instance = uiDocumentPool.Get();
+				instance.transform.SetPositionAndRotation(spawnPos, Quaternion.identity);
+				instance.SetLabelText(points.ToString());
 
-			//onfinish, release.
+				//create tween.
+				instance.transform.BMoveFromTo(spawnPos, spawnPos + Vector3.up * 0.5f, 0.5f, Ease.EaseOutCirc)
+					.Then(instance.transform.BScaleFromTo(instance.transform.localScale, Vector3.zero, 0.1f,
+						Ease.EaseInCirc, false))
+					.OnComplete(() => { uiDocumentPool.Release(instance); });
+			}
 		}
 	}
 }
