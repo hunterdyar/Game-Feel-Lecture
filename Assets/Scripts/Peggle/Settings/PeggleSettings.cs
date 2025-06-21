@@ -28,6 +28,7 @@ namespace Peggle
 		public bool LauncherPredictionEnabled;
 		
 		[Header("Peg Settings")]
+		public PegLayout pegLayout;
 		public Peg PegPrefab;
 		public float delayBetweenPegClears;
 		public float timeOfContinuousContactBeforeRemovingPeg;
@@ -40,6 +41,7 @@ namespace Peggle
 		public bool bonkPegAnimationOnHit;
 		public bool pegsShowHitState;
 		public bool lightForBall;
+		public bool showTextUI;
 
 		[Header("Bucket Settings")]
 		public bool randomizeBucketStartPosition;
@@ -55,6 +57,7 @@ namespace Peggle
 		public int BaseScoreSpecialPeg;
 		public int BaseBucketScore;
 		public bool AnimateScoreChanges;
+		public bool AnimateScoreDings;
 
 		public int GetScoreMultiplier(int remainingRequiredPegs)
 		{

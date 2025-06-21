@@ -61,9 +61,16 @@ namespace Peggle.Peggle.UI
 			PeggleManager.OnTotalScoreChanged += OnTotalScoreChanged;
 			PeggleManager.OnScoreEarned += OnScoreEarned;
 			PeggleManager.OnRemainingBallCountChanged += OnRemainingBallCountChanged;
+
+			SetVisible(PeggleManager.Settings.showTextUI);
 		}
 
-	
+		private void SetVisible(bool visible)
+		{
+			_doc.rootVisualElement.visible = visible;
+		}
+
+
 		private void OnDisable()
 		{
 			PeggleManager.OnShotScoreChanged -= OnShotScoreChanged;
@@ -107,7 +114,7 @@ namespace Peggle.Peggle.UI
 
 		private void OnScoreEarned(Vector3 worldPos, int points)
 		{
-			if (PeggleManager.Settings.AnimateScoreChanges)
+			if (PeggleManager.Settings.AnimateScoreDings)
 			{
 				var spawnPos = worldPos + Vector3.up * 0.5f;
 				WorldSpaceUIDocument instance = uiDocumentPool.Get();

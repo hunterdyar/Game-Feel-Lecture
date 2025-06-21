@@ -27,17 +27,14 @@ namespace Peggle.Peggle
 			Launcher.OnBallLaunch += OnBallLaunch;
 			PeggleManager.OnBallInBucket += OnBallInBucket;
 		}
-
-	
-
+		
 		private void OnDisable()
 		{
-			PeggleManager.OnRoundStart += OnRoundStart;
-			Peg.OnPegHit += OnPegHit;
-			Peg.OnPegLoadedIn += OnPegLoadedIn;
+			PeggleManager.OnRoundStart -= OnRoundStart;
+			Peg.OnPegHit -= OnPegHit;
+			Peg.OnPegLoadedIn -= OnPegLoadedIn;
 			Launcher.OnBallLaunch -= OnBallLaunch;
 			PeggleManager.OnBallInBucket -= OnBallInBucket;
-
 		}
 
 		private void OnPegLoadedIn(Peg obj)
@@ -78,7 +75,6 @@ namespace Peggle.Peggle
 			{
 				_source.pitch = 1;
 				_source.PlayOneShot(_pegHits[_streakCount]);
-				Debug.Log((_streakCount));
 			}
 			else
 			{

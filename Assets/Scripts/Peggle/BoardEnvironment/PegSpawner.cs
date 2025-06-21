@@ -54,7 +54,7 @@ namespace Peggle
 			{
 				foreach (var p in _shape.Points)
 				{
-					Gizmos.color = Color.yellowNice;
+					Gizmos.color = Color.yellow;
 					Gizmos.DrawWireSphere(p, 0.2f);
 				}
 			}
