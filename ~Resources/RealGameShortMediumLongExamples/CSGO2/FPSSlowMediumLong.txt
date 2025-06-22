@@ -1,0 +1,5 @@
+Short Term: Fire immediately to kill a low-health enemy around the corner.
+
+Medium Term: Move from the middle of the playfield to one of the bases to reinforce teammates.
+
+Long Term: Coordinate a slow push strategy with teammates to control the map over multiple rounds.
