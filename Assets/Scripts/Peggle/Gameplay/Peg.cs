@@ -3,6 +3,7 @@ using BTween;
 using Peggle;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class Peg : MonoBehaviour, IBallHit
 {
@@ -38,6 +39,7 @@ public class Peg : MonoBehaviour, IBallHit
         if (_entranceTween != null)
         {
             _entranceTween.Stop();
+            _entranceTween = null;
         }
     }
 
@@ -57,7 +59,19 @@ public class Peg : MonoBehaviour, IBallHit
         OnPegStateChanged(_pegState);
         if (PeggleManager.Settings.PegEntranceAnimation)
         {
-            _entranceTween = transform.BScaleFromTo(Vector3.zero, Vector3.one, 1f, Ease.EaseOutBounce, true);
+            float delay = Random.Range(0,PeggleManager.Settings.RandomVariationEntranceAnimationStartTime);
+            if (delay <= Mathf.Epsilon)
+            {
+                _entranceTween = transform.BScaleFromTo(Vector3.zero, Vector3.one, 1f, Ease.EaseOutBounce, true);
+            }
+            else
+            {
+                transform.localScale = Vector3.zero;
+                _entranceTween = new Tween(delay);//a tween with no property tweens is still a valid tween.
+                _entranceTween.Add(new NothingTween());
+                _entranceTween.Then(transform.BScaleTo(Vector3.one, 1f, Ease.EaseOutBounce, false));
+                _entranceTween.Start();
+            }
         }
     }
 
@@ -72,6 +86,12 @@ public class Peg : MonoBehaviour, IBallHit
         PeggleManager.OnRoundStart -= OnRoundStart;
         PeggleManager.StartGame -= StartGame;
         BallPrediction.SetEnabled(gameObject, false);
+        
+        if (_entranceTween != null)
+        {
+            _entranceTween.Stop();
+            _entranceTween = null;
+        }
     }
     private void OnRoundStart()
     {

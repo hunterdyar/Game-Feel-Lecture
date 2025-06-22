@@ -37,13 +37,13 @@ MonoBehaviour:
     requiredPegColor: {r: 1, g: 0.6465747, b: 0.1273585, a: 1}
     specialPegColor: {r: 1, g: 0.4575472, b: 0.99649024, a: 1}
     PegCircleRotationSpeed: 68.46
-    PegLineRotationSpeed: 0
+    PegLineRotationSpeed: 0.36
     bonkPegAnimationOnHit: 1
     pegsShowHitState: 1
     lightForBall: 0
     showTextUI: 0
     PegEntranceAnimation: 1
-    RandomVariationEntranceAnimationStartTime: 0
+    RandomVariationEntranceAnimationStartTime: 0.35
     randomizeBucketStartPosition: 1
     bucketMoveSpeed: 4
     BallsPerGame: 3
