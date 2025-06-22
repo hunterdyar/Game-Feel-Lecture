@@ -28,16 +28,16 @@ namespace PresentationSystem.Viewer.SlideViewers
 			_presentation = gameObject.GetComponentInParent<Presentation>();
 		}
 
-		protected void SetDefaultBackgroundColor()
+		public void SetDefaultBackgroundColor()
 		{
 			SetBackgroundColor(Settings.DefaultBackgroundColor);
 		}
 
-		protected void SetBackgroundTransparent()
+		public void SetBackgroundTransparent()
 		{
 			SetBackgroundColor(new Color(0,0,0,0));
 		}
-		protected void SetBackgroundColor(Color color)
+		public void SetBackgroundColor(Color color)
 		{
 			_uiDocument.rootVisualElement.style.backgroundColor = color;
 		}

@@ -16,4 +16,4 @@ MonoBehaviour:
   _overlaySlideDocument: {fileID: 9197481963319205126, guid: 4b73ccb1d3270c44fa4778cb04216eab, type: 3}
   _panelSettings: {fileID: 11400000, guid: 01e01a81faacd47439d1cda9b44f3e6b, type: 2}
   DefaultTextColor: {r: 0.9056604, g: 0.8940471, b: 0.8757565, a: 1}
-  DefaultBackgroundColor: {r: 0.05424528, g: 0.21698111, b: 0.15304026, a: 1}
+  DefaultBackgroundColor: {r: 0.103773594, g: 0.103773594, b: 0.103773594, a: 1}
