@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Peggle.Dino
 {
@@ -11,7 +12,12 @@ namespace Peggle.Dino
 		private void Awake()
 		{
 			Instance = this;
-			Settings = _settings;
+
+			if (Settings == null)
+			{
+				Settings = _settings;
+			}
+
 		}
 
 		public static void SetSettings(DinoSettings settings)

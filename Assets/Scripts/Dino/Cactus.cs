@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Cactus : MonoBehaviour
 {
-    public float moveSpeed = 6.0f;
     public float resetX = 10f;
     public float offscreenX = -10f;
     private SpriteRenderer spriteRenderer;
@@ -17,7 +16,7 @@ public class Cactus : MonoBehaviour
     void Update()
     {
         spriteRenderer.enabled = DinoSettingsManager.Settings.VisibleCactus;
-        transform.position += Vector3.left * moveSpeed * Time.deltaTime;
+        transform.position += Vector3.left * (DinoSettingsManager.Settings.moveSpeed * Time.deltaTime);
 
         if (transform.position.x < offscreenX)
         {

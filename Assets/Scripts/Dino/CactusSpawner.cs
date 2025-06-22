@@ -17,6 +17,11 @@ public class CactusSpawner : MonoBehaviour
     {
         while (isSpawning)
         {
+            if (DinoSettingsManager.Settings == null)
+            {
+                yield return null;
+                continue;
+            }
             if (DinoSettingsManager.Settings.VaryCactusTimes)
             {
                 yield return new WaitForSeconds(Random.Range(0.5f, 2f));

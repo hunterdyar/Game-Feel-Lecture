@@ -23,7 +23,6 @@ namespace Peggle.Dino
 		private void OnEnterSlide()
 		{
 			DinoSettingsManager.SetSettings(_settings);
-			
 		}
 	}
 }
