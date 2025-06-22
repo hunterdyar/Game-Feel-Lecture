@@ -1,3 +1,4 @@
+using Peggle.Dino;
 using UnityEngine;
 
 public class CactusDistanceVisual : MonoBehaviour
@@ -12,7 +13,11 @@ public class CactusDistanceVisual : MonoBehaviour
     private void Update()
     {
         if (dino == null) return;
-
+        if (!DinoSettingsManager.Settings.DistanceToCactus)
+        {
+            transform.localScale = new Vector3(0,transform.localScale.y, transform.localScale.z);
+            return;
+        }
         GameObject[] cacti = GameObject.FindGameObjectsWithTag(cactusTag);
         if (cacti.Length == 0) return;
 

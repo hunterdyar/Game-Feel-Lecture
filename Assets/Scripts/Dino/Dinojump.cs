@@ -1,3 +1,4 @@
+using Peggle.Dino;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -20,7 +21,12 @@ public class DinoJump : MonoBehaviour
     private Vector3 endPos;
     private Vector3 originalScale;
     public GameObject particles;
+    private SpriteRenderer spriteRenderer;
 
+    void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
     void Start()
     {
         originalScale = transform.localScale;
@@ -28,11 +34,17 @@ public class DinoJump : MonoBehaviour
 
     public void SpawnParticles()
     {
-        Instantiate(particles, new Vector3(transform.position.x,-2.95f, transform.position.z), Quaternion.identity);
+        if (DinoSettingsManager.Settings.ParticlesOnLand)
+        {
+            Instantiate(particles, new Vector3(transform.position.x, -2.95f, transform.position.z),
+                Quaternion.identity);
+        }
     }
 
     void Update()
     {
+        spriteRenderer.enabled = DinoSettingsManager.Settings.VisibleDino;
+        var squash = DinoSettingsManager.Settings.SquashStretchDino;
         // if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
         // {
         //     StartJump();
@@ -48,14 +60,20 @@ public class DinoJump : MonoBehaviour
                 // Ascending with ease-out
                 float eased = EaseOutQuad(progress * 2f);
                 transform.position = Vector3.Lerp(startPos, peakPos, eased);
-                transform.localScale = Vector3.Lerp(originalScale, stretchScale, eased);
+                if (squash)
+                {
+                    transform.localScale = Vector3.Lerp(originalScale, stretchScale, eased);
+                }
             }
             else if (progress < 1f)
             {
                 // Descending with ease-in
                 float eased = EaseInQuad((progress - 0.5f) * 2f);
                 transform.position = Vector3.Lerp(peakPos, endPos, eased);
-                transform.localScale = Vector3.Lerp(stretchScale, squashScale, eased);
+                if (squash)
+                {
+                    transform.localScale = Vector3.Lerp(stretchScale, squashScale, eased);
+                }
             }
             else
             {

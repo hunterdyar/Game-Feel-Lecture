@@ -1,3 +1,5 @@
+using System;
+using Peggle.Dino;
 using UnityEngine;
 
 public class Cactus : MonoBehaviour
@@ -5,9 +7,16 @@ public class Cactus : MonoBehaviour
     public float moveSpeed = 6.0f;
     public float resetX = 10f;
     public float offscreenX = -10f;
+    private SpriteRenderer spriteRenderer;
+
+    private void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
     void Update()
     {
+        spriteRenderer.enabled = DinoSettingsManager.Settings.VisibleCactus;
         transform.position += Vector3.left * moveSpeed * Time.deltaTime;
 
         if (transform.position.x < offscreenX)
