@@ -36,12 +36,16 @@ namespace Peggle
 		public Color basicPegColor;
 		public Color requiredPegColor;
 		public Color specialPegColor;
+		public float PegCircleRotationSpeed;
+		public float PegLineRotationSpeed;
 		
 		[Header("Visual Settings")]
 		public bool bonkPegAnimationOnHit;
 		public bool pegsShowHitState;
 		public bool lightForBall;
 		public bool showTextUI;
+		public bool PegEntranceAnimation;
+		public float RandomVariationEntranceAnimationStartTime;
 
 		[Header("Bucket Settings")]
 		public bool randomizeBucketStartPosition;

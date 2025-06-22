@@ -265,7 +265,7 @@ GameObject:
   m_Component:
   - component: {fileID: 66115178}
   m_Layer: 0
-  m_Name: Feedbacks and Juice
+  m_Name: 'Feedbacks '
   m_TagString: SlideGroup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -576,6 +576,8 @@ MonoBehaviour:
     basicPegColor: {r: 0.57254905, g: 0.83137256, b: 1, a: 1}
     requiredPegColor: {r: 1, g: 0.64705884, b: 0.1254902, a: 1}
     specialPegColor: {r: 1, g: 0.45882353, b: 0.99607843, a: 1}
+    PegCircleRotationSpeed: 0
+    PegLineRotationSpeed: 0
     bonkPegAnimationOnHit: 0
     pegsShowHitState: 0
     lightForBall: 0
@@ -624,6 +626,126 @@ MonoBehaviour:
   _presentation: {fileID: 2102221279}
   sceneName: Peggle
   OverlayText: 'State: Colorful Pegs'
+  DisplayOverlay: 1
+--- !u!1 &307743271
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 307743272}
+  - component: {fileID: 307743275}
+  - component: {fileID: 307743274}
+  - component: {fileID: 307743273}
+  m_Layer: 0
+  m_Name: Motion in World
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &307743272
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307743271}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1080677986}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &307743273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307743271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56ad669181ed476c9ced4245cd26ade5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _peggleManager: {fileID: 11400000, guid: ee80a6bded253b94d94bd4b75467dcd6, type: 2}
+  Settings:
+    ballPrefab: {fileID: 3824727524208583939, guid: 2437f43a555a8e844b381b7806d0d4e9, type: 3}
+    ballTrail: 1
+    ballTrailTime: 0.4
+    ballBounciness: 0.75
+    pegBounciness: 0.6
+    wallBounciness: 0.6
+    bucketBounciness: 1
+    launcherRotationSpeed: 50
+    launchSpeed: 6.03
+    limitLauncherAngle: 1
+    degreesAwayFromUpToPrevent: 110
+    LauncherTrailTickCount: 50
+    LauncherPredictionEnabled: 1
+    pegLayout: 0
+    PegPrefab: {fileID: 3334641741667097732, guid: 2ce3653d1b5731741af1bb0289bf24c9, type: 3}
+    delayBetweenPegClears: 0.05
+    timeOfContinuousContactBeforeRemovingPeg: 2
+    shapeRotationSpeed: 3
+    basicPegColor: {r: 0.57254905, g: 0.83137256, b: 1, a: 1}
+    requiredPegColor: {r: 1, g: 0.64705884, b: 0.1254902, a: 1}
+    specialPegColor: {r: 1, g: 0.45882353, b: 0.99607843, a: 1}
+    PegCircleRotationSpeed: 3
+    PegLineRotationSpeed: 0
+    bonkPegAnimationOnHit: 1
+    pegsShowHitState: 1
+    lightForBall: 1
+    showTextUI: 1
+    randomizeBucketStartPosition: 1
+    bucketMoveSpeed: 4
+    BallsPerGame: 5
+    RequiredPegCount: 3
+    BaseScoreNormalPeg: 10
+    BaseScoreRequiredPeg: 100
+    BaseScoreSpecialPeg: 500
+    BaseBucketScore: 1000
+    AnimateScoreChanges: 1
+    AnimateScoreDings: 1
+--- !u!114 &307743274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307743271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: 01e01a81faacd47439d1cda9b44f3e6b, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 4b73ccb1d3270c44fa4778cb04216eab, type: 3}
+  m_SortingOrder: 0
+  m_WorldSpaceSizeMode: 1
+  m_WorldSpaceWidth: 1920
+  m_WorldSpaceHeight: 1080
+--- !u!114 &307743275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307743271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92e8a12faac744ea98803537726a1c05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _presentation: {fileID: 2102221279}
+  sceneName: Peggle
+  OverlayText: Random Bucket Start Position
   DisplayOverlay: 1
 --- !u!1 &391685307
 GameObject:
@@ -762,6 +884,8 @@ MonoBehaviour:
     basicPegColor: {r: 0.57254905, g: 0.83137256, b: 1, a: 1}
     requiredPegColor: {r: 1, g: 0.64705884, b: 0.1254902, a: 1}
     specialPegColor: {r: 1, g: 0.45882353, b: 0.99607843, a: 1}
+    PegCircleRotationSpeed: 0
+    PegLineRotationSpeed: 0
     bonkPegAnimationOnHit: 1
     pegsShowHitState: 1
     lightForBall: 0
@@ -880,6 +1004,73 @@ MonoBehaviour:
 
     Intuition on what makes a video game <color="red">Feel
     Good</color> to play?'
+--- !u!1 &534133166
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 534133167}
+  - component: {fileID: 534133169}
+  - component: {fileID: 534133168}
+  m_Layer: 0
+  m_Name: Juice Intro
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &534133167
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534133166}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1080677986}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &534133168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534133166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: 01e01a81faacd47439d1cda9b44f3e6b, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: f95fb8a273806304ea8ee0f0aaa3fd02, type: 3}
+  m_SortingOrder: 0
+  m_WorldSpaceSizeMode: 1
+  m_WorldSpaceWidth: 1920
+  m_WorldSpaceHeight: 1080
+--- !u!114 &534133169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534133166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 424fbdfb76f4440caca8e28104fd36c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _presentation: {fileID: 2102221279}
+  TitleText: Make a Game Feel Alive
+  SubtitleText: aka "Juicey"
 --- !u!1 &669322645
 GameObject:
   m_ObjectHideFlags: 0
@@ -1015,6 +1206,8 @@ MonoBehaviour:
     basicPegColor: {r: 0.57254905, g: 0.83137256, b: 1, a: 1}
     requiredPegColor: {r: 1, g: 0.64705884, b: 0.1254902, a: 1}
     specialPegColor: {r: 1, g: 0.45882353, b: 0.99607843, a: 1}
+    PegCircleRotationSpeed: 0
+    PegLineRotationSpeed: 0
     bonkPegAnimationOnHit: 1
     pegsShowHitState: 1
     lightForBall: 0
@@ -1133,6 +1326,8 @@ MonoBehaviour:
     basicPegColor: {r: 0.57254905, g: 0.83137256, b: 1, a: 1}
     requiredPegColor: {r: 1, g: 0.64705884, b: 0.1254902, a: 1}
     specialPegColor: {r: 1, g: 0.45882353, b: 0.99607843, a: 1}
+    PegCircleRotationSpeed: 0
+    PegLineRotationSpeed: 0
     bonkPegAnimationOnHit: 0
     pegsShowHitState: 1
     lightForBall: 0
@@ -1317,6 +1512,8 @@ MonoBehaviour:
     basicPegColor: {r: 0.57254905, g: 0.83137256, b: 1, a: 1}
     requiredPegColor: {r: 1, g: 0.64705884, b: 0.1254902, a: 1}
     specialPegColor: {r: 1, g: 0.45882353, b: 0.99607843, a: 1}
+    PegCircleRotationSpeed: 0
+    PegLineRotationSpeed: 0
     bonkPegAnimationOnHit: 1
     pegsShowHitState: 1
     lightForBall: 0
@@ -1366,6 +1563,72 @@ MonoBehaviour:
   sceneName: Peggle
   OverlayText: 'Change: Peg Hits'
   DisplayOverlay: 1
+--- !u!1 &866037590
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 866037591}
+  - component: {fileID: 866037593}
+  - component: {fileID: 866037592}
+  m_Layer: 0
+  m_Name: Random Variation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &866037591
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866037590}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1080677986}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &866037592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866037590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: 01e01a81faacd47439d1cda9b44f3e6b, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: d1d1adb8352026d48ae990a617fbdddd, type: 3}
+  m_SortingOrder: 0
+  m_WorldSpaceSizeMode: 1
+  m_WorldSpaceWidth: 1920
+  m_WorldSpaceHeight: 1080
+--- !u!114 &866037593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866037590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96b11c1071c83f646a5c3664746dc65f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _presentation: {fileID: 2102221279}
+  Text: Random Variation
 --- !u!1 &948762742
 GameObject:
   m_ObjectHideFlags: 0
@@ -1435,6 +1698,8 @@ MonoBehaviour:
     basicPegColor: {r: 0.57254905, g: 0.83137256, b: 1, a: 1}
     requiredPegColor: {r: 1, g: 0.64705884, b: 0.1254902, a: 1}
     specialPegColor: {r: 1, g: 0.45882353, b: 0.99607843, a: 1}
+    PegCircleRotationSpeed: 0
+    PegLineRotationSpeed: 0
     bonkPegAnimationOnHit: 1
     pegsShowHitState: 1
     lightForBall: 1
@@ -1553,6 +1818,8 @@ MonoBehaviour:
     basicPegColor: {r: 0.57254905, g: 0.83137256, b: 1, a: 1}
     requiredPegColor: {r: 1, g: 0.64705884, b: 0.1254902, a: 1}
     specialPegColor: {r: 1, g: 0.45882353, b: 0.99607843, a: 1}
+    PegCircleRotationSpeed: 0
+    PegLineRotationSpeed: 0
     bonkPegAnimationOnHit: 0
     pegsShowHitState: 1
     lightForBall: 0
@@ -1671,6 +1938,8 @@ MonoBehaviour:
     basicPegColor: {r: 0.57254905, g: 0.83137256, b: 1, a: 1}
     requiredPegColor: {r: 1, g: 0.64705884, b: 0.1254902, a: 1}
     specialPegColor: {r: 1, g: 0.45882353, b: 0.99607843, a: 1}
+    PegCircleRotationSpeed: 0
+    PegLineRotationSpeed: 0
     bonkPegAnimationOnHit: 1
     pegsShowHitState: 1
     lightForBall: 1
@@ -1720,6 +1989,42 @@ MonoBehaviour:
   sceneName: Peggle
   OverlayText: 'Prediction: Just Aim for Them'
   DisplayOverlay: 1
+--- !u!1 &1080677985
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1080677986}
+  m_Layer: 0
+  m_Name: Juice
+  m_TagString: SlideGroup
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1080677986
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080677985}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 534133167}
+  - {fileID: 1719940190}
+  - {fileID: 866037591}
+  - {fileID: 1592589369}
+  - {fileID: 307743272}
+  m_Father: {fileID: 2102221278}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1101017053
 GameObject:
   m_ObjectHideFlags: 0
@@ -1855,6 +2160,8 @@ MonoBehaviour:
     basicPegColor: {r: 0.57254905, g: 0.83137256, b: 1, a: 1}
     requiredPegColor: {r: 1, g: 0.64705884, b: 0.1254902, a: 1}
     specialPegColor: {r: 1, g: 0.45882353, b: 0.99607843, a: 1}
+    PegCircleRotationSpeed: 0
+    PegLineRotationSpeed: 0
     bonkPegAnimationOnHit: 1
     pegsShowHitState: 1
     lightForBall: 0
@@ -2239,6 +2546,126 @@ MonoBehaviour:
   m_WorldSpaceSizeMode: 1
   m_WorldSpaceWidth: 1920
   m_WorldSpaceHeight: 1080
+--- !u!1 &1592589368
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1592589369}
+  - component: {fileID: 1592589372}
+  - component: {fileID: 1592589371}
+  - component: {fileID: 1592589370}
+  m_Layer: 0
+  m_Name: Random Bucket Start Position
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1592589369
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592589368}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1080677986}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1592589370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592589368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56ad669181ed476c9ced4245cd26ade5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _peggleManager: {fileID: 11400000, guid: ee80a6bded253b94d94bd4b75467dcd6, type: 2}
+  Settings:
+    ballPrefab: {fileID: 3824727524208583939, guid: 2437f43a555a8e844b381b7806d0d4e9, type: 3}
+    ballTrail: 1
+    ballTrailTime: 0.4
+    ballBounciness: 0.75
+    pegBounciness: 0.6
+    wallBounciness: 0.6
+    bucketBounciness: 1
+    launcherRotationSpeed: 50
+    launchSpeed: 6.03
+    limitLauncherAngle: 1
+    degreesAwayFromUpToPrevent: 110
+    LauncherTrailTickCount: 50
+    LauncherPredictionEnabled: 1
+    pegLayout: 0
+    PegPrefab: {fileID: 3334641741667097732, guid: 2ce3653d1b5731741af1bb0289bf24c9, type: 3}
+    delayBetweenPegClears: 0.05
+    timeOfContinuousContactBeforeRemovingPeg: 2
+    shapeRotationSpeed: 3
+    basicPegColor: {r: 0.57254905, g: 0.83137256, b: 1, a: 1}
+    requiredPegColor: {r: 1, g: 0.64705884, b: 0.1254902, a: 1}
+    specialPegColor: {r: 1, g: 0.45882353, b: 0.99607843, a: 1}
+    PegCircleRotationSpeed: 0
+    PegLineRotationSpeed: 0
+    bonkPegAnimationOnHit: 1
+    pegsShowHitState: 1
+    lightForBall: 1
+    showTextUI: 1
+    randomizeBucketStartPosition: 1
+    bucketMoveSpeed: 4
+    BallsPerGame: 5
+    RequiredPegCount: 3
+    BaseScoreNormalPeg: 10
+    BaseScoreRequiredPeg: 100
+    BaseScoreSpecialPeg: 500
+    BaseBucketScore: 1000
+    AnimateScoreChanges: 1
+    AnimateScoreDings: 1
+--- !u!114 &1592589371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592589368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: 01e01a81faacd47439d1cda9b44f3e6b, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 4b73ccb1d3270c44fa4778cb04216eab, type: 3}
+  m_SortingOrder: 0
+  m_WorldSpaceSizeMode: 1
+  m_WorldSpaceWidth: 1920
+  m_WorldSpaceHeight: 1080
+--- !u!114 &1592589372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592589368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92e8a12faac744ea98803537726a1c05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _presentation: {fileID: 2102221279}
+  sceneName: Peggle
+  OverlayText: Random Bucket Start Position
+  DisplayOverlay: 1
 --- !u!1 &1639704397
 GameObject:
   m_ObjectHideFlags: 0
@@ -2375,6 +2802,126 @@ MonoBehaviour:
     locked in
 
     fully immersed'
+--- !u!1 &1719940189
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1719940190}
+  - component: {fileID: 1719940193}
+  - component: {fileID: 1719940192}
+  - component: {fileID: 1719940191}
+  m_Layer: 0
+  m_Name: aim information
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1719940190
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719940189}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1080677986}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1719940191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719940189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56ad669181ed476c9ced4245cd26ade5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _peggleManager: {fileID: 11400000, guid: ee80a6bded253b94d94bd4b75467dcd6, type: 2}
+  Settings:
+    ballPrefab: {fileID: 3824727524208583939, guid: 2437f43a555a8e844b381b7806d0d4e9, type: 3}
+    ballTrail: 1
+    ballTrailTime: 0.4
+    ballBounciness: 0.75
+    pegBounciness: 0.6
+    wallBounciness: 0.6
+    bucketBounciness: 1
+    launcherRotationSpeed: 50
+    launchSpeed: 6.03
+    limitLauncherAngle: 1
+    degreesAwayFromUpToPrevent: 110
+    LauncherTrailTickCount: 50
+    LauncherPredictionEnabled: 1
+    pegLayout: 0
+    PegPrefab: {fileID: 3334641741667097732, guid: 2ce3653d1b5731741af1bb0289bf24c9, type: 3}
+    delayBetweenPegClears: 0.05
+    timeOfContinuousContactBeforeRemovingPeg: 2
+    shapeRotationSpeed: 3
+    basicPegColor: {r: 0.57254905, g: 0.83137256, b: 1, a: 1}
+    requiredPegColor: {r: 1, g: 0.64705884, b: 0.1254902, a: 1}
+    specialPegColor: {r: 1, g: 0.45882353, b: 0.99607843, a: 1}
+    PegCircleRotationSpeed: 0
+    PegLineRotationSpeed: 0
+    bonkPegAnimationOnHit: 1
+    pegsShowHitState: 1
+    lightForBall: 1
+    showTextUI: 1
+    randomizeBucketStartPosition: 0
+    bucketMoveSpeed: 0
+    BallsPerGame: 5
+    RequiredPegCount: 3
+    BaseScoreNormalPeg: 10
+    BaseScoreRequiredPeg: 100
+    BaseScoreSpecialPeg: 500
+    BaseBucketScore: 1000
+    AnimateScoreChanges: 1
+    AnimateScoreDings: 1
+--- !u!114 &1719940192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719940189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: 01e01a81faacd47439d1cda9b44f3e6b, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 4b73ccb1d3270c44fa4778cb04216eab, type: 3}
+  m_SortingOrder: 0
+  m_WorldSpaceSizeMode: 1
+  m_WorldSpaceWidth: 1920
+  m_WorldSpaceHeight: 1080
+--- !u!114 &1719940193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719940189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92e8a12faac744ea98803537726a1c05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _presentation: {fileID: 2102221279}
+  sceneName: Peggle
+  OverlayText: 'Prediction: Just Aim for Them'
+  DisplayOverlay: 1
 --- !u!1 &1760248286
 GameObject:
   m_ObjectHideFlags: 0
@@ -2724,6 +3271,8 @@ MonoBehaviour:
     basicPegColor: {r: 1, g: 1, b: 1, a: 1}
     requiredPegColor: {r: 1, g: 1, b: 1, a: 1}
     specialPegColor: {r: 1, g: 1, b: 1, a: 1}
+    PegCircleRotationSpeed: 0
+    PegLineRotationSpeed: 0
     bonkPegAnimationOnHit: 0
     pegsShowHitState: 0
     lightForBall: 0
@@ -2784,9 +3333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _presentation: {fileID: 2102221279}
-  Text: 'Feedback & Juice
-
-'
+  Text: Feedback & Juice
 --- !u!114 &1906109874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3196,6 +3743,7 @@ Transform:
   - {fileID: 1320929929}
   - {fileID: 1282699174}
   - {fileID: 66115178}
+  - {fileID: 1080677986}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2102221279
@@ -3211,7 +3759,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _presentationSettings: {fileID: 11400000, guid: dde697782f90c22499f4bf22a04b1f12, type: 2}
-  startingSlide: 26
+  startingSlide: 30
 --- !u!114 &2102221280
 MonoBehaviour:
   m_ObjectHideFlags: 0

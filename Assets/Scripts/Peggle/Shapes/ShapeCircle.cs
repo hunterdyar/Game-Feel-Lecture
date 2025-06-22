@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 
 namespace Peggle.Shapes
 {
@@ -11,7 +10,6 @@ namespace Peggle.Shapes
 		[Range(0, 1)] public float circlePercent;
 		private IEnumerable<Vector3> CirclePoints()
 		{
-
 			for (int i = 0; i < pegCount; i++)
 			{
 				//yield for each point on a circle at radius.

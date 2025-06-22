@@ -1,4 +1,5 @@
 using System;
+using BTween;
 using Peggle;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -18,6 +19,7 @@ public class Peg : MonoBehaviour, IBallHit
     public PegType PegType => _pegType;
     private PegType _pegType;
     private PegState _pegState;
+    private Tween _entranceTween;
     
     [SerializeField] int _hitsToClear = 1;
 
@@ -33,6 +35,10 @@ public class Peg : MonoBehaviour, IBallHit
     private void OnDestroy()
     {
         BallPrediction.UnregisterColliderForPrediction(gameObject);
+        if (_entranceTween != null)
+        {
+            _entranceTween.Stop();
+        }
     }
 
     private void OnEnable()
@@ -49,6 +55,10 @@ public class Peg : MonoBehaviour, IBallHit
         _col.enabled = true;
         OnPegLoadedIn?.Invoke(this);
         OnPegStateChanged(_pegState);
+        if (PeggleManager.Settings.PegEntranceAnimation)
+        {
+            _entranceTween = transform.BScaleFromTo(Vector3.zero, Vector3.one, 1f, Ease.EaseOutBounce, true);
+        }
     }
 
     public void SetPegType(PegType pegType)

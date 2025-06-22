@@ -1,5 +1,7 @@
-﻿using Peggle;
+﻿using System;
+using Peggle;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 
 public class Bucket : MonoBehaviour
@@ -13,6 +15,26 @@ public class Bucket : MonoBehaviour
 	private float RightEdge => _rightPosition.position.x - _width / 2;
 
 	void Start()
+	{
+		MoveToRandomPosition();	
+	}
+
+	private void OnEnable()
+	{
+		PeggleManager.StartGame += OnGameStart;
+	}
+
+	private void OnGameStart()
+	{
+		MoveToRandomPosition();
+	}
+
+	private void OnDisable()
+	{
+		PeggleManager.StartGame -= OnGameStart;
+	}
+
+	void MoveToRandomPosition()
 	{
 		if (PeggleManager.Settings.randomizeBucketStartPosition)
 		{
