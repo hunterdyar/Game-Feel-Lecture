@@ -6785,7 +6785,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _presentationSettings: {fileID: 11400000, guid: dde697782f90c22499f4bf22a04b1f12, type: 2}
-  startingSlide: 30
+  startingSlide: 0
 --- !u!114 &2102221280
 MonoBehaviour:
   m_ObjectHideFlags: 0
