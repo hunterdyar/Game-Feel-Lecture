@@ -1025,7 +1025,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _presentation: {fileID: 2102221279}
   sceneName: DinoJump
-  OverlayText: Dino Jump Simplified
+  OverlayText: Moving Visuals and Background
   DisplayOverlay: 1
 --- !u!114 &299354079
 MonoBehaviour:
@@ -6785,7 +6785,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _presentationSettings: {fileID: 11400000, guid: dde697782f90c22499f4bf22a04b1f12, type: 2}
-  startingSlide: 45
+  startingSlide: 30
 --- !u!114 &2102221280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6865,7 +6865,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _presentation: {fileID: 2102221279}
-  TitleText: ...It's Complicated
+  TitleText: ...It's Complicated...
   SubtitleText: An answer may be right for one game but wrong for another
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

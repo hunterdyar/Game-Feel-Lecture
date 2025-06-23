@@ -1,16 +1,16 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:VisualElement name="Root" style="flex-grow: 1; flex-direction: row;">
         <ui:VisualElement name="Controls" style="flex-grow: 1;">
-            <ui:Label text="Controls" style="-unity-text-align: upper-center; -unity-font-style: bold;" />
-            <ui:Label text="Button&#10;Impulse&#10;" style="-unity-text-align: upper-center;" />
+            <ui:Label text="Controls" style="-unity-text-align: upper-center; -unity-font-style: bold; font-size: 42px;" />
+            <ui:Label text="Button&#10;Impulse&#10;" style="-unity-text-align: upper-center; font-size: 36px;" />
         </ui:VisualElement>
         <ui:VisualElement name="Action" style="flex-grow: 1;">
-            <ui:Label text="Action" style="-unity-text-align: upper-center; -unity-font-style: bold;" />
-            <ui:Label text="Jump&#10;Watch Cactus Distance&#10;Timing&#10;Rhythm/Clock" style="-unity-text-align: upper-center;" />
+            <ui:Label text="Action" style="-unity-text-align: upper-center; -unity-font-style: bold; font-size: 42px;" />
+            <ui:Label text="Jump&#10;Watch Cactus Distance&#10;Timing&#10;Rhythm/Clock" style="-unity-text-align: upper-center; font-size: 36px;" />
         </ui:VisualElement>
         <ui:VisualElement name="Information" style="flex-grow: 1;">
-            <ui:Label text="Information" style="-unity-text-align: upper-center; -unity-font-style: bold;" />
-            <ui:Label text="Cactus Location&#10;Cactus Speed&#10;Distance between Dino and Cactus&#10;When Landing Particles&#10;When Jumping Dino Visuals" style="-unity-text-align: upper-center;" />
+            <ui:Label text="Information" style="-unity-text-align: upper-center; -unity-font-style: bold; font-size: 42px;" />
+            <ui:Label text="Cactus Location&#10;Cactus Speed&#10;Dino and Cactus Distance&#10;When Landing: Particles&#10;When Jumping: Squash" style="-unity-text-align: upper-center; font-size: 36px;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
