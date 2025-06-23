@@ -34,6 +34,24 @@ namespace Peggle
 			}
 		}
 
+		private void OnCollisionStay2D(Collision2D other)
+		{
+			var ballhit = other.gameObject.GetComponent<IBallHit>();
+			if (ballhit != null)
+			{
+				ballhit.Stay(this, other);
+			}
+		}
+
+		private void OnCollisionExit2D(Collision2D other)
+		{
+			var ballhit = other.gameObject.GetComponent<IBallHit>();
+			if (ballhit != null)
+			{
+				ballhit.Exit(this, other);
+			}
+		}
+
 		private void OnTriggerEnter2D(Collider2D other)
 		{
 			var death = other.gameObject.GetComponent<BallDeathZone>();

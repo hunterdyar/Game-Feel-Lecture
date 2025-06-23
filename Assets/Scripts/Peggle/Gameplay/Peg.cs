@@ -111,8 +111,13 @@ public class Peg : MonoBehaviour, IBallHit
         OnPegHit?.Invoke(this);
     }
 
-    private void OnCollisionStay2D(Collision2D other)
+    public void Exit(Ball ball, Collision2D collision)
     {
+        ballStuckTime = 0;
+    }
+
+    public void Stay(Ball ball, Collision2D collision)
+    { 
         ballStuckTime += Time.deltaTime;
         if (ballStuckTime >= PeggleManager.Settings.timeOfContinuousContactBeforeRemovingPeg)
         {
@@ -120,11 +125,6 @@ public class Peg : MonoBehaviour, IBallHit
             _pegState = PegState.ClearedByStuck;
             gameObject.SetActive(false);
         }
-    }
-
-    private void OnCollisionExit2D(Collision2D other)
-    {
-        ballStuckTime = 0;
     }
 
     public void Clear()
