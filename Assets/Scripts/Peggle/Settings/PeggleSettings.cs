@@ -46,7 +46,8 @@ namespace Peggle
 		public bool showTextUI;
 		public bool PegEntranceAnimation;
 		public float RandomVariationEntranceAnimationStartTime;
-
+		public bool cameraShake;
+		
 		[Header("Bucket Settings")]
 		public bool randomizeBucketStartPosition;
 		public float bucketMoveSpeed;
@@ -63,6 +64,10 @@ namespace Peggle
 		public bool AnimateScoreChanges;
 		public bool AnimateScoreDings;
 
+		[Header("Audio Settings")] public bool turnOnSounds;
+		public bool raisePitchOnStreak;
+		
+		
 		public int GetScoreMultiplier(int remainingRequiredPegs)
 		{
 			//https://peggle.fandom.com/wiki/Scoring_System

@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Peggle.Peggle
 {
@@ -23,6 +22,7 @@ namespace Peggle.Peggle
 		{
 			PeggleManager.OnRoundStart += OnRoundStart;
 			Peg.OnPegHit+= OnPegHit;
+			Wall.OnHit += OnWallHit;
 			Peg.OnPegLoadedIn += OnPegLoadedIn;
 			Launcher.OnBallLaunch += OnBallLaunch;
 			PeggleManager.OnBallInBucket += OnBallInBucket;
@@ -32,6 +32,7 @@ namespace Peggle.Peggle
 		{
 			PeggleManager.OnRoundStart -= OnRoundStart;
 			Peg.OnPegHit -= OnPegHit;
+			Wall.OnHit -= OnWallHit;
 			Peg.OnPegLoadedIn -= OnPegLoadedIn;
 			Launcher.OnBallLaunch -= OnBallLaunch;
 			PeggleManager.OnBallInBucket -= OnBallInBucket;
@@ -61,6 +62,11 @@ namespace Peggle.Peggle
 			_streakCount++;
 		}
 
+		private void OnWallHit()
+		{
+			PlayWallHitSound();
+		}
+
 		private void OnRoundStart()
 		{
 			_streakCount = 0;
@@ -68,9 +74,30 @@ namespace Peggle.Peggle
 
 		#endregion
 
-
+		private void PlayWallHitSound()
+		{
+			if (PeggleManager.Settings.turnOnSounds)
+			{
+				return;
+			}
+			
+			_source.pitch = 1;
+			_source.PlayOneShot(_pegHits[0]);
+		}
 		private void PlayPegHitSound()
 		{
+			if (PeggleManager.Settings.turnOnSounds)
+			{
+				return;
+			}
+
+			if (PeggleManager.Settings.raisePitchOnStreak)
+			{
+				_source.pitch = 1;
+				_source.PlayOneShot(_pegHits[0]);
+				return;
+			}
+			
 			if (_streakCount < _pegHits.Length)
 			{
 				_source.pitch = 1;
