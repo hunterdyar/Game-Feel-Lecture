@@ -1451,9 +1451,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _presentation: {fileID: 2102221279}
-  Text: '4 Models for Thinking About Games
+  Text: '6 Models for Thinking About Games
 
-    (aka make it juicy)'
+    and Game Feel'
 --- !u!1 &398314650
 GameObject:
   m_ObjectHideFlags: 0
@@ -6590,7 +6590,7 @@ MonoBehaviour:
 
     Analytical Tools
 
-'
+    Rubric'
 --- !u!1 &1947485655
 GameObject:
   m_ObjectHideFlags: 0
@@ -6927,7 +6927,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _presentation: {fileID: 2102221279}
-  TitleText: The Game Design Workflow
+  TitleText: The Game Design Process
   SubtitleText: '1. Try Something (<color="red">developer insight</color>)
 
     2.
@@ -7070,7 +7070,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _presentation: {fileID: 2102221279}
-  TitleText: The Game Design Workflow
+  TitleText: The Game Design Process
   SubtitleText: '1. Try Something (developer insight)
 
     2. Playtest (does it feel
