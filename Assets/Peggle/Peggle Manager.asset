@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Peggle Manager
   m_EditorClassIdentifier: 
   CurrentShotScore: 0
-  CurrentTotalScore: 0
+  CurrentTotalScore: 2000
   _settings:
     ballPrefab: {fileID: 3824727524208583939, guid: 2437f43a555a8e844b381b7806d0d4e9, type: 3}
     ballTrail: 1
@@ -26,31 +26,34 @@ MonoBehaviour:
     launchSpeed: 6.03
     limitLauncherAngle: 1
     degreesAwayFromUpToPrevent: 110
-    LauncherTrailTickCount: 168
+    LauncherTrailTickCount: 50
     LauncherPredictionEnabled: 1
     pegLayout: 0
     PegPrefab: {fileID: 3334641741667097732, guid: 2ce3653d1b5731741af1bb0289bf24c9, type: 3}
     delayBetweenPegClears: 0.05
     timeOfContinuousContactBeforeRemovingPeg: 2
     shapeRotationSpeed: 3
-    basicPegColor: {r: 0.5707547, g: 0.8332159, b: 1, a: 1}
-    requiredPegColor: {r: 1, g: 0.6465747, b: 0.1273585, a: 1}
-    specialPegColor: {r: 1, g: 0.4575472, b: 0.99649024, a: 1}
-    PegCircleRotationSpeed: 68.46
-    PegLineRotationSpeed: 0.36
+    basicPegColor: {r: 0.57254905, g: 0.83137256, b: 1, a: 1}
+    requiredPegColor: {r: 1, g: 0.64705884, b: 0.1254902, a: 1}
+    specialPegColor: {r: 1, g: 0.45882353, b: 0.99607843, a: 1}
+    PegCircleRotationSpeed: 0
+    PegLineRotationSpeed: 0
     bonkPegAnimationOnHit: 1
     pegsShowHitState: 1
-    lightForBall: 0
-    showTextUI: 0
+    lightForBall: 1
+    showTextUI: 1
     PegEntranceAnimation: 1
-    RandomVariationEntranceAnimationStartTime: 0.35
+    RandomVariationEntranceAnimationStartTime: 0.5
+    cameraShake: 1
     randomizeBucketStartPosition: 1
     bucketMoveSpeed: 4
-    BallsPerGame: 3
-    RequiredPegCount: 10
+    BallsPerGame: 5
+    RequiredPegCount: 3
     BaseScoreNormalPeg: 10
     BaseScoreRequiredPeg: 100
     BaseScoreSpecialPeg: 500
     BaseBucketScore: 1000
     AnimateScoreChanges: 1
-    AnimateScoreDings: 0
+    AnimateScoreDings: 1
+    turnOnSounds: 1
+    raisePitchOnStreak: 1

@@ -830,6 +830,7 @@ MonoBehaviour:
     showTextUI: 0
     PegEntranceAnimation: 0
     RandomVariationEntranceAnimationStartTime: 0
+    cameraShake: 0
     randomizeBucketStartPosition: 0
     bucketMoveSpeed: 0
     BallsPerGame: 5
@@ -1125,6 +1126,7 @@ MonoBehaviour:
     showTextUI: 1
     PegEntranceAnimation: 0
     RandomVariationEntranceAnimationStartTime: 0
+    cameraShake: 0
     randomizeBucketStartPosition: 1
     bucketMoveSpeed: 4
     BallsPerGame: 5
@@ -1170,7 +1172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _presentation: {fileID: 2102221279}
   sceneName: Peggle
-  OverlayText: Random Bucket Start Position
+  OverlayText: Motion In Level
   DisplayOverlay: 1
 --- !u!1 &328106678
 GameObject:
@@ -1529,6 +1531,7 @@ MonoBehaviour:
     showTextUI: 1
     PegEntranceAnimation: 0
     RandomVariationEntranceAnimationStartTime: 0
+    cameraShake: 0
     randomizeBucketStartPosition: 0
     bucketMoveSpeed: 0
     BallsPerGame: 5
@@ -2494,6 +2497,7 @@ MonoBehaviour:
     showTextUI: 1
     PegEntranceAnimation: 0
     RandomVariationEntranceAnimationStartTime: 0
+    cameraShake: 0
     randomizeBucketStartPosition: 0
     bucketMoveSpeed: 0
     BallsPerGame: 5
@@ -2618,6 +2622,7 @@ MonoBehaviour:
     showTextUI: 0
     PegEntranceAnimation: 0
     RandomVariationEntranceAnimationStartTime: 0
+    cameraShake: 0
     randomizeBucketStartPosition: 0
     bucketMoveSpeed: 0
     BallsPerGame: 5
@@ -2742,6 +2747,7 @@ MonoBehaviour:
     showTextUI: 1
     PegEntranceAnimation: 1
     RandomVariationEntranceAnimationStartTime: 0.5
+    cameraShake: 0
     randomizeBucketStartPosition: 1
     bucketMoveSpeed: 4
     BallsPerGame: 5
@@ -3023,6 +3029,7 @@ MonoBehaviour:
     showTextUI: 1
     PegEntranceAnimation: 0
     RandomVariationEntranceAnimationStartTime: 0
+    cameraShake: 0
     randomizeBucketStartPosition: 0
     bucketMoveSpeed: 0
     BallsPerGame: 5
@@ -3213,6 +3220,7 @@ MonoBehaviour:
     showTextUI: 1
     PegEntranceAnimation: 0
     RandomVariationEntranceAnimationStartTime: 0
+    cameraShake: 0
     randomizeBucketStartPosition: 0
     bucketMoveSpeed: 0
     BallsPerGame: 5
@@ -3260,6 +3268,83 @@ MonoBehaviour:
   sceneName: Peggle
   OverlayText: 'Prediction: Ball Lights & Shadows'
   DisplayOverlay: 1
+--- !u!1 &976771350
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 976771351}
+  - component: {fileID: 976771353}
+  - component: {fileID: 976771352}
+  m_Layer: 0
+  m_Name: its complicated
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &976771351
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976771350}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1560863864}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &976771352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976771350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: 01e01a81faacd47439d1cda9b44f3e6b, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: f95fb8a273806304ea8ee0f0aaa3fd02, type: 3}
+  m_SortingOrder: 0
+  m_WorldSpaceSizeMode: 1
+  m_WorldSpaceWidth: 1920
+  m_WorldSpaceHeight: 1080
+--- !u!114 &976771353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976771350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 424fbdfb76f4440caca8e28104fd36c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _presentation: {fileID: 2102221279}
+  TitleText: Game Feel
+  SubtitleText: '1. Flow
+
+    2. Control-Action-Information Maps
+
+    3. Decision
+    Frquency Overlap (short/medium/long)
+
+    4. The Interaction Loop & Agency
+
+    5.
+    Feedbacks & Juice'
 --- !u!1 &991847012
 GameObject:
   m_ObjectHideFlags: 0
@@ -3337,6 +3422,7 @@ MonoBehaviour:
     showTextUI: 1
     PegEntranceAnimation: 0
     RandomVariationEntranceAnimationStartTime: 0
+    cameraShake: 0
     randomizeBucketStartPosition: 0
     bucketMoveSpeed: 0
     BallsPerGame: 5
@@ -3461,6 +3547,7 @@ MonoBehaviour:
     showTextUI: 1
     PegEntranceAnimation: 0
     RandomVariationEntranceAnimationStartTime: 0
+    cameraShake: 0
     randomizeBucketStartPosition: 0
     bucketMoveSpeed: 0
     BallsPerGame: 5
@@ -3590,6 +3677,7 @@ Transform:
   - {fileID: 307743272}
   - {fileID: 1947485656}
   - {fileID: 700296531}
+  - {fileID: 1684893395}
   - {fileID: 1686646049}
   - {fileID: 1441417955}
   m_Father: {fileID: 2102221278}
@@ -3807,6 +3895,7 @@ MonoBehaviour:
     showTextUI: 1
     PegEntranceAnimation: 0
     RandomVariationEntranceAnimationStartTime: 0
+    cameraShake: 0
     randomizeBucketStartPosition: 0
     bucketMoveSpeed: 0
     BallsPerGame: 5
@@ -4528,6 +4617,7 @@ MonoBehaviour:
     showTextUI: 1
     PegEntranceAnimation: 1
     RandomVariationEntranceAnimationStartTime: 0.5
+    cameraShake: 0
     randomizeBucketStartPosition: 1
     bucketMoveSpeed: 4
     BallsPerGame: 5
@@ -4573,7 +4663,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _presentation: {fileID: 2102221279}
   sceneName: Peggle
-  OverlayText: Random Delay In Animation
+  OverlayText: Sound Pitch Increase
   DisplayOverlay: 1
 --- !u!1 &1466108613
 GameObject:
@@ -4935,6 +5025,38 @@ MonoBehaviour:
   m_WorldSpaceSizeMode: 1
   m_WorldSpaceWidth: 1920
   m_WorldSpaceHeight: 1080
+--- !u!1 &1560863863
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1560863864}
+  m_Layer: 0
+  m_Name: Conclusion
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1560863864
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560863863}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 976771351}
+  m_Father: {fileID: 2102221278}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1592589368
 GameObject:
   m_ObjectHideFlags: 0
@@ -5012,6 +5134,7 @@ MonoBehaviour:
     showTextUI: 1
     PegEntranceAnimation: 0
     RandomVariationEntranceAnimationStartTime: 0
+    cameraShake: 0
     randomizeBucketStartPosition: 1
     bucketMoveSpeed: 4
     BallsPerGame: 5
@@ -5191,6 +5314,72 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _presentation: {fileID: 2102221279}
   Image: {fileID: 2800000, guid: f4746d53edf25f0488a205340bebf278, type: 3}
+--- !u!1 &1684893394
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1684893395}
+  - component: {fileID: 1684893397}
+  - component: {fileID: 1684893396}
+  m_Layer: 0
+  m_Name: Audio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1684893395
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684893394}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1080677986}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1684893396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684893394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: 01e01a81faacd47439d1cda9b44f3e6b, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: d1d1adb8352026d48ae990a617fbdddd, type: 3}
+  m_SortingOrder: 0
+  m_WorldSpaceSizeMode: 1
+  m_WorldSpaceWidth: 1920
+  m_WorldSpaceHeight: 1080
+--- !u!114 &1684893397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684893394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96b11c1071c83f646a5c3664746dc65f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _presentation: {fileID: 2102221279}
+  Text: Audio
 --- !u!1 &1686646048
 GameObject:
   m_ObjectHideFlags: 0
@@ -5268,6 +5457,7 @@ MonoBehaviour:
     showTextUI: 1
     PegEntranceAnimation: 1
     RandomVariationEntranceAnimationStartTime: 0.5
+    cameraShake: 0
     randomizeBucketStartPosition: 1
     bucketMoveSpeed: 4
     BallsPerGame: 5
@@ -5313,7 +5503,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _presentation: {fileID: 2102221279}
   sceneName: Peggle
-  OverlayText: Random Delay In Animation
+  OverlayText: Sounds
   DisplayOverlay: 1
 --- !u!1 &1704475676
 GameObject:
@@ -5940,6 +6130,7 @@ MonoBehaviour:
     showTextUI: 0
     PegEntranceAnimation: 0
     RandomVariationEntranceAnimationStartTime: 0
+    cameraShake: 0
     randomizeBucketStartPosition: 0
     bucketMoveSpeed: 0
     BallsPerGame: 3
@@ -6477,6 +6668,7 @@ MonoBehaviour:
     showTextUI: 1
     PegEntranceAnimation: 1
     RandomVariationEntranceAnimationStartTime: 0
+    cameraShake: 0
     randomizeBucketStartPosition: 1
     bucketMoveSpeed: 4
     BallsPerGame: 5
@@ -6925,6 +7117,7 @@ Transform:
   - {fileID: 1282699174}
   - {fileID: 66115178}
   - {fileID: 1080677986}
+  - {fileID: 1560863864}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2102221279

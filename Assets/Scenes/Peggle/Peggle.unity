@@ -1145,7 +1145,7 @@ Transform:
   m_GameObject: {fileID: 697191894}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2607,9 +2607,9 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1
-  m_DampingRatio: 0.55
-  m_Frequency: 1
+  m_Distance: 0.005
+  m_DampingRatio: 0.31
+  m_Frequency: 22.22
 --- !u!50 &1914885691
 Rigidbody2D:
   serializedVersion: 5
@@ -2623,8 +2623,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
+  m_LinearDamping: 5
+  m_AngularDamping: 1.79
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -2636,7 +2636,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1914885692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2649,6 +2649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62534ee247704a2c883a5573d85de2f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  intensity: 10
 --- !u!1 &1941981723
 GameObject:
   m_ObjectHideFlags: 0

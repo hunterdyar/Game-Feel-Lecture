@@ -56,10 +56,13 @@ namespace Peggle.Peggle
 			_streakCount = 0;
 		}
 
-		private void OnPegHit(Peg obj)
+		private void OnPegHit(Peg peg, bool litUpThisHit)
 		{
+			if (litUpThisHit)
+			{
+				_streakCount++;
+			}
 			PlayPegHitSound();
-			_streakCount++;
 		}
 
 		private void OnWallHit()
@@ -76,7 +79,7 @@ namespace Peggle.Peggle
 
 		private void PlayWallHitSound()
 		{
-			if (PeggleManager.Settings.turnOnSounds)
+			if (!PeggleManager.Settings.turnOnSounds)
 			{
 				return;
 			}
@@ -86,12 +89,12 @@ namespace Peggle.Peggle
 		}
 		private void PlayPegHitSound()
 		{
-			if (PeggleManager.Settings.turnOnSounds)
+			if (!PeggleManager.Settings.turnOnSounds)
 			{
 				return;
 			}
 
-			if (PeggleManager.Settings.raisePitchOnStreak)
+			if (!PeggleManager.Settings.raisePitchOnStreak)
 			{
 				_source.pitch = 1;
 				_source.PlayOneShot(_pegHits[0]);
@@ -102,12 +105,14 @@ namespace Peggle.Peggle
 			{
 				_source.pitch = 1;
 				_source.PlayOneShot(_pegHits[_streakCount]);
+				return;
 			}
 			else
 			{
 				var extra = Mathf.Max(5,_streakCount - _pegHits.Length);
 				_source.pitch = 1+(extra * 0.05841f);
 				_source.PlayOneShot(_pegHits[^1]);
+				return;
 			}
 		}
 	}

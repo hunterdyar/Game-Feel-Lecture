@@ -9,7 +9,7 @@ namespace Peggle
 	{
 		public Rigidbody2D RB => _rb;
 		private Rigidbody2D _rb;
-
+		public static Action<Collision2D> OnAnyHit;
 		void Awake()
 		{
 			_rb = GetComponent<Rigidbody2D>();
@@ -31,6 +31,7 @@ namespace Peggle
 			if (ballhit != null)
 			{
 				ballhit.Hit(this, other);
+				OnAnyHit?.Invoke(other);
 			}
 		}
 

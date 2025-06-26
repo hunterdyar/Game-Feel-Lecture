@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 
 public class Peg : MonoBehaviour, IBallHit
 {
-    public static Action<Peg> OnPegHit;
+    public static Action<Peg, bool> OnPegHit;
     public static Action<Peg> OnPegCleared;
     public static Action<Peg> OnPegLoadedIn;
     public Action<PegType> OnPegTypeChanged;
@@ -106,9 +106,14 @@ public class Peg : MonoBehaviour, IBallHit
             _pegState = PegState.LitUp;
             OnPegStateChanged?.Invoke(_pegState);
             Manager.PegLitUp(this);
+            OnPegHit?.Invoke(this, true);
+        }
+        else
+        {
+            OnPegHit?.Invoke(this, false);
         }
         OnThisPegHit?.Invoke(_hitCount, collision);
-        OnPegHit?.Invoke(this);
+        
     }
 
     public void Exit(Ball ball, Collision2D collision)

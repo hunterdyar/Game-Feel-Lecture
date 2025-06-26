@@ -23,8 +23,12 @@ namespace Peggle
 			_impactTween = _pegImpactOverlayRenderer.transform.BScaleFromTo(Vector3.one, Vector3.one * 2, 0.2f, Ease.EaseOutCirc, false)
 				.Add(new FloatTween((c)=>
 					{
-						_pegImpactOverlayRenderer.color = new Color(_pegImpactOverlayRenderer.color.r,
-							_pegImpactOverlayRenderer.color.g, _pegImpactOverlayRenderer.color.b, c);
+						if (_pegImpactOverlayRenderer != null)
+						{
+							_pegImpactOverlayRenderer.color = new Color(_pegImpactOverlayRenderer.color.r,
+								_pegImpactOverlayRenderer.color.g, _pegImpactOverlayRenderer.color.b, c);
+						}
+
 						return c;
 					},
 					1,0,Ease.EaseOutCirc));

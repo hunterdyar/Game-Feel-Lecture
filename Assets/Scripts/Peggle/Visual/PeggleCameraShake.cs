@@ -6,29 +6,32 @@ namespace Peggle
 	public class PeggleCameraShake : MonoBehaviour
 	{
 		private SpringJoint2D _springJoint;
-
+		private Rigidbody2D _rigidbody;
+		public float intensity;
 		private void Awake()
 		{
 			_springJoint = GetComponent<SpringJoint2D>();
+			_rigidbody = GetComponent<Rigidbody2D>();
 		}
 
 		private void OnEnable()
 		{
-			Peg.OnPegHit += OnPegHit;
+			Ball.OnAnyHit += OnHit;
 		}
 
-		private void OnPegHit(Peg obj)
+		private void OnHit(Collision2D collision)
 		{
-			
+			if (PeggleManager.Settings.cameraShake)
+			{
+				var f = collision.relativeVelocity;
+				_rigidbody.AddForce(f*intensity, ForceMode2D.Impulse);
+			}
 		}
 
 		private void OnDisable()
 		{
-			Peg.OnPegHit -= OnPegHit;
-
+			Ball.OnAnyHit -= OnHit;
 		}
-
-		
 
 		private void Update()
 		{
